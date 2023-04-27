@@ -25,3 +25,31 @@ The most obvious similarity is that all of these sites are very neutral in styli
 Typical sections are an eye-catch at the top with a slogan, followed by more details of services offered, examples of finished projects, and finally contact information. This order of presentation is in line with what the potential viewer wants to know as they read through the page.
 
 There are many signs of the sites heavily employing all SEO practices. Keywords are included in the copy, usually flowing pretty well as human-readable content. Some more obvious stuffing is present on some of these however.
+
+## Scope
+
+There's no reason to deviate much from the visual design style of a typical portfolio website. Fancy effects are not needed, and the design will focus on communicating the ability to present content in a frictionless manner.
+
+The discerning feature will be the integrated commissioning functionality. Using role-based access controls, clients will create an account and then begin a project by sending a quote request. The website will handle the entire lifecycle of a commission, from concept through checkout to completion. Any out-of-band communication with the developer (website owner) can be handled via email.
+
+Let's break down MVP features into individual items:
+
+-   An attractive frontpage to introduce visitors to the owner's services:
+    -   Eyecatch section with background and slogan,
+    -   Projects section introducing previous finished projects with a brief description,
+    -   Testimonials section (if there are any to display,)
+    -   Contact section, explaining the commission process and "create an account" call to action,
+    -   Sign-up and sign-in functionality, with a "Remember me" checkbox. Both redirect the user to their dashboard.
+-   User dashboard:
+    -   Section with all of the user's projects and their current state,
+    -   Button to create a new project,
+    -   Links to sign out and modify user details,
+    -   Option to create a testimonial after a project is delivered,
+    -   Project editor, where a registered user can detail their project request to receive a quote for it,
+    -   Checkout page, where a project with a quote can be paid for.
+-   Owner dashboard:
+    -   A listing of all projects created by users and their current states,
+    -   Owner project editor, where the owner can update the state of a project by canceling or it sending a quote,
+    -   Update editor, where the owner can send an update to a user with current state of a project in progress or mark it as delivered.
+-   Email sending for both owner and relevant user on any project update,
+-   Privacy Policy and Terms of Service pages.
