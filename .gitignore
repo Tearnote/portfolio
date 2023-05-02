@@ -3,3 +3,6 @@
 
 # Environment
 .env
+
+# Runtime files
+db.sqlite3
