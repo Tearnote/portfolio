@@ -1,2 +1,5 @@
 # IDE configuration
 .idea/**
+
+# Environment
+.env
