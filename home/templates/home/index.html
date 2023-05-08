@@ -19,8 +19,13 @@
 <header>
     <h1>Portfolio</h1>
     <nav>
-        <button>Sign in</button>
-        <button>Sign up</button>
+        {% if user.is_authenticated %}
+            <p>Signed in as {{ user }}</p>
+            <button>Sign out</button>
+        {% else %}
+            <button>Sign in</button>
+            <button>Sign up</button>
+        {% endif %}
     </nav>
 </header>
 
