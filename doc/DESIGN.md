@@ -60,4 +60,48 @@ The flow of interaction between pages is illustrated below:
 
 ![Flowchart of how users can traverse the website pages](interactions.png)
 
-The original file in [draw.io](https://app.diagrams.net) format is available [here](interactions.drawio).
+The flowchart source in [draw.io](https://app.diagrams.net) format is available [here](interactions.drawio).
+
+## Wireframes
+
+Homepage - eyecatch:
+
+![Wireframe of the eyecatch section of the homepage (desktop)](wireframes/d-home-eyecatch.png)
+![Wireframe of the eyecatch section of the homepage (mobile)](wireframes/m-home-eyecatch.png)
+
+Homepage - projects:
+
+![Wireframe of the projects section of the homepage (desktop)](wireframes/d-home-projects.png)
+![Wireframe of the projects section of the homepage (mobile)](wireframes/m-home-projects.png)
+
+Homepage - testimonials:
+
+![Wireframe of the testimonials section of the homepage (desktop)](wireframes/d-home-testimonials.png)
+![Wireframe of the testimonials section of the homepage (mobile)](wireframes/m-home-testimonials.png)
+
+User dashboard:
+
+![Wireframe of the user dashboard (desktop)](wireframes/d-user-dashboard.png)
+![Wireframe of the user dashboard (mobile)](wireframes/m-user-dashboard.png)
+
+Create request:
+
+![Wireframe of the request creation page (desktop)](wireframes/d-create-request.png)
+![Wireframe of the request creation page (mobile)](wireframes/m-create-request.png)
+
+Pay for request:
+
+![Wireframe of the payment page (desktop)](wireframes/d-pay.png)
+![Wireframe of the payment page (mobile)](wireframes/m-pay.png)
+
+Leave testimonial:
+
+![Wireframe of the testimonial page (desktop)](wireframes/d-leave-testimonial.png)
+![Wireframe of the testimonial page (mobile)](wireframes/m-leave-testimonial.png)
+
+Owner dashboard:
+
+![Wireframe of the owner dashboard (desktop)](wireframes/d-owner-dashboard.png)
+![Wireframe of the owner dashboard (mobile)](wireframes/m-owner-dashboard.png)
+
+The wireframe sources in [Balsamiq](https://balsamiq.com/wireframes/) format are available [here](wireframes/wireframes.bmpr).
