@@ -105,3 +105,37 @@ Owner dashboard:
 ![Wireframe of the owner dashboard (mobile)](wireframes/m-owner-dashboard.png)
 
 The wireframe sources in [Balsamiq](https://balsamiq.com/wireframes/) format are available [here](wireframes/wireframes.bmpr).
+
+## Database schema
+
+The models are predicted to be as follows:
+
+### Profile
+
+Details of a user beyond the ones used for login and identification, for the purpose of collecting extra information and testimonial display.
+
+-   User (foreign key)
+-   Business name
+-   Country
+-   Business website (optional)
+
+### Project
+
+A commissioned project, tracked from creation to completion by a state machine.
+
+-   Creation date
+-   User (foreign key)
+-   Status (new, quoted, in progress, completed, rejected, cancelled)
+-   Name
+-   Description
+-   Quote amount (nullable)
+-   UUID
+
+### Testimonial
+
+A user-generated write-up of their experience with the website owner.
+
+-   Creation date
+-   User (foreign key)
+-   Project (foreign key)
+-   Body
