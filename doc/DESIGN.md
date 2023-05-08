@@ -53,3 +53,11 @@ Let's break down MVP features into individual items:
     -   Update editor, where the owner can send an update to a user with current state of a project in progress or mark it as delivered.
 -   Email sending for both owner and relevant user on any project update,
 -   Privacy Policy and Terms of Service pages.
+
+## Interaction design
+
+The flow of interaction between pages is illustrated below:
+
+![Flowchart of how users can traverse the website pages](interactions.png)
+
+The original file in [draw.io](https://app.diagrams.net) format is available [here](interactions.drawio).
