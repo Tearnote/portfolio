@@ -21,10 +21,10 @@
     <nav>
         {% if user.is_authenticated %}
             <p>Signed in as {{ user }}</p>
-            <button>Sign out</button>
+            <a role="button" href="{% url 'account_logout' %}">Sign out</a>
         {% else %}
-            <button>Sign in</button>
-            <button>Sign up</button>
+            <a role="button" href="{% url 'account_login' %}">Sign in</a>
+            <a role="button" href="{% url 'account_signup' %}">Sign up</a>
         {% endif %}
     </nav>
 </header>
