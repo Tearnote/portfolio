@@ -16,4 +16,4 @@ class Profile(models.Model):
     website = models.URLField()
 
     def __str__(self):
-        return self.user
+        return f'{self.business_name} ({str(self.user)})'
