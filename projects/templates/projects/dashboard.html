@@ -4,6 +4,15 @@
 
 {% block content %}
 
-<p>Dashboard!</p>
+<main>
+
+    <h2>Projects</h2>
+    <div class="project-list">
+        {% for project in projects %}
+            {% include 'projects/includes/project.html' with project=project %}
+        {% endfor %}
+    </div>
+
+</main>
 
 {% endblock %}
