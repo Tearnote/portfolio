@@ -39,3 +39,19 @@ class Project(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Testimonial(models.Model):
+    """A user's review of the website owner's services
+    """
+
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+    )
+    project = models.OneToOneField(Project, on_delete=models.CASCADE)
+    date_created = models.DateTimeField(auto_now_add=True)
+    body = models.TextField(max_length=2048)
+
+    def __str__(self):
+        return f"{self.user}'s {self.project} testimonial"
