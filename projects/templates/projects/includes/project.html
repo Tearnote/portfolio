@@ -9,14 +9,34 @@
         {% endif %}
     </p>
     <div class="actions">
-        {% if project.status == project.PAYABLE %}
-            <a role="button" href="#">Pay now</a>
-        {% endif %}
-        {% if project.status == project.NEW or project.status == project.PAYABLE %}
-            <a role="button" href="#">Cancel</a>
-        {% endif %}
-        {% if project.status == project.COMPLETED %}
-            <a role="button" href="#">Leave testimonial</a>
+        {% if is_owner %}
+            {% if project.status == project.NEW %}
+                <form method="POST" action="#">
+                    {% csrf_token %}
+                    <label>
+                        Amount:
+                        <input type="number" name="quote_amount">
+                    </label>
+                    <input type="submit" content="Set quote">
+                </form>
+                <a role="button" href="#">Reject</a>
+            {% endif %}
+            {% if project.status == project.PAYABLE or project.status == project.IN_PROGRESS %}
+                <a role="button" href="#">Cancel</a>
+            {% endif %}
+            {% if project.status == project.IN_PROGRESS %}
+                <a role="button" href="#">Mark completed</a>
+            {% endif %}
+        {% else %}
+            {% if project.status == project.PAYABLE %}
+                <a role="button" href="#">Pay now</a>
+            {% endif %}
+            {% if project.status == project.NEW or project.status == project.PAYABLE %}
+                <a role="button" href="#">Cancel</a>
+            {% endif %}
+            {% if project.status == project.COMPLETED %}
+                <a role="button" href="#">Leave testimonial</a>
+            {% endif %}
         {% endif %}
     </div>
 </div>
