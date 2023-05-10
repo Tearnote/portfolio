@@ -1,1 +1,22 @@
-<p>Project name: {{ project.name }}</p>
+<div class="project">
+    <p>{{ project.name }}</p>
+    <p>Description: {{ project.description }}</p>
+    <p>Reference code: {{ project.uuid }}</p>
+    <p>
+        {# The if needs to be on the same line to avoid a space before the comma #}
+        Status: {{ project.get_status_display }}{% if project.status == project.PAYABLE %},
+            &euro;{{ project.quote_amount }}
+        {% endif %}
+    </p>
+    <div class="actions">
+        {% if project.status == project.PAYABLE %}
+            <a role="button" href="#">Pay now</a>
+        {% endif %}
+        {% if project.status == project.NEW or project.status == project.PAYABLE %}
+            <a role="button" href="#">Cancel</a>
+        {% endif %}
+        {% if project.status == project.COMPLETED %}
+            <a role="button" href="#">Leave testimonial</a>
+        {% endif %}
+    </div>
+</div>
