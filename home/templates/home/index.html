@@ -17,15 +17,23 @@
 <body>
 
 <header>
-    <h1>Portfolio</h1>
     <nav>
-        {% if user.is_authenticated %}
-            <p>Signed in as {{ user }}</p>
-            <a role="button" href="{% url 'account_logout' %}">Sign out</a>
-        {% else %}
-            <a role="button" href="{% url 'account_login' %}">Sign in</a>
-            <a role="button" href="{% url 'account_signup' %}">Sign up</a>
-        {% endif %}
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <ul>
+            {% if user.is_authenticated %}
+                <li><p>Signed in as {{ user }}</p></li>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="{% url 'account_logout' %}">Sign out</a></li>
+            {% else %}
+                <li><a href="{% url 'account_login' %}">Sign in</a></li>
+                <li><a href="{% url 'account_signup' %}">Sign up</a></li>
+            {% endif %}
+        </ul>
     </nav>
 </header>
 
