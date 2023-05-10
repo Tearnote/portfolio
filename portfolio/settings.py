@@ -27,6 +27,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'django_countries',
     'home',
+    'projects',
+    'userprofile',
 ]
 
 MIDDLEWARE = [
