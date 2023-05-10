@@ -3,6 +3,7 @@
 
 # Environment
 .env
+*/migrations/*
 
 # Runtime files
 db.sqlite3
