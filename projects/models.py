@@ -38,7 +38,7 @@ class Project(models.Model):
     uuid = models.UUIDField(default=uuid.uuid4, editable=False)
 
     def __str__(self):
-        return self.name
+        return f'{self.name} ({self.user})'
 
 
 class Testimonial(models.Model):
