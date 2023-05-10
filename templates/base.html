@@ -22,7 +22,7 @@
             <li><a href="{% url 'home' %}">Home</a></li>
             {% block header_anchors %}{% endblock %}
             {% if user.is_authenticated %}
-                <li><a href="#">Dashboard</a></li>
+                <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
             {% endif %}
         </ul>
         <ul>

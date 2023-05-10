@@ -1,3 +1,7 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def dashboard(request):
+    """Render the user/owner dashboard"""
+
+    return render(request, "projects/dashboard.html")
