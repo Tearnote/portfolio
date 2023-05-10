@@ -1,20 +1,6 @@
-{% load static %}
+{% extends 'base.html' %}
 
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Hubert Maraszek - Portfolio</title>
-
-    {% if debug %}
-        <link rel="stylesheet" href="{% static 'css/bootstrap-reboot.css' %}">
-    {% else %}
-        <link rel="stylesheet" href="{% static 'css/bootstrap-reboot.min.css' %}">
-    {% endif %}
-</head>
-<body>
+{% block content %}
 
 <header>
     <nav>
@@ -113,12 +99,12 @@
         <p>
             If you would like to commission me for a project, you can use the
             built-in request system! To get started, sign up
-            <a href="#">here</a>. Your data will only be used for commission
+            <a href="{% url 'account_signup' %}">here</a>. Your data will only be used for commission
             management purposes.
         </p>
         <p>
             For any other inquiries, feel free to use the
-            <a href="#">contact</a> form to send me a message.
+            <a href="#">contact form</a> to send me a message.
         </p>
     </section>
 
@@ -139,5 +125,4 @@
     </ul>
 </footer>
 
-</body>
-</html>
+{% endblock %}
