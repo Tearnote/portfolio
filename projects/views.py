@@ -83,3 +83,21 @@ def cancel_project(request):
     project.save()
 
     return redirect('dashboard')
+
+
+@login_required
+def reject_project(request):
+    """Set project state to rejected
+    """
+
+    # Confirm request is valid
+    if request.method != 'POST':
+        return HttpResponseNotAllowed(['POST'])
+    if not request.user.is_staff:
+        return HttpResponseForbidden()
+
+    project = get_object_or_404(models.Project, pk=request.POST['projectId'])
+    project.status = models.Project.REJECTED
+    project.save()
+
+    return redirect('dashboard')

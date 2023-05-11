@@ -19,7 +19,11 @@
                     </label>
                     <input type="submit" value="Set quote">
                 </form>
-                <a role="button" href="#">Reject</a>
+                <form method="POST" action="{% url 'reject_project' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="projectId" value="{{ project.id }}">
+                    <input type="submit" value="Reject" onclick="confirmProjectReject(event)">
+                </form>
             {% endif %}
             {% if project.status == project.PAYABLE or project.status == project.IN_PROGRESS %}
                 <form method="POST" action="{% url 'cancel_project' %}">
@@ -54,6 +58,13 @@
     function confirmProjectCancel(event) {
         if (!confirm(
             "Are you sure you want to cancel the project?" +
+            " The effect is immediate and cannot be undone."
+        ))
+            event.preventDefault();
+    }
+    function confirmProjectReject(event) {
+        if (!confirm(
+            "Are you sure you want to reject the project?" +
             " The effect is immediate and cannot be undone."
         ))
             event.preventDefault();
