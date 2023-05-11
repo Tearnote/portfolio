@@ -1,5 +1,6 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render
+from django.http import HttpResponseNotAllowed
+from django.shortcuts import render, redirect
 from . import models, forms
 
 
@@ -25,8 +26,7 @@ def dashboard(request):
     return render(request, 'projects/dashboard.html', context)
 
 
-@login_required
-def new_project(request):
+def render_new_project(request):
     """Render the new project page
     """
 
@@ -37,3 +37,29 @@ def new_project(request):
         'form': form,
     }
     return render(request, 'projects/new_project.html', context)
+
+
+def create_new_project(request):
+    """Create a new Project from POST data
+    """
+
+    # Construct form from POST data
+    form = forms.ProjectForm(request.POST)
+    project = form.save(commit=False)
+    project.user = request.user
+    project.save()
+
+    return redirect('dashboard')
+
+
+@login_required
+def new_project(request):
+    """Dispatch new project requests
+    """
+
+    if request.method == 'GET':
+        return render_new_project(request)
+    elif request.method == 'POST':
+        return create_new_project(request)
+    else:
+        return HttpResponseNotAllowed(['GET', 'POST'])
