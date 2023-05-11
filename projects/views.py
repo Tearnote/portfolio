@@ -96,3 +96,16 @@ def reject_project(request):
     project.save()
 
     return redirect('dashboard')
+
+
+@staff_member_required
+@require_POST
+def complete_project(request):
+    """Set project state to completed
+    """
+
+    project = get_object_or_404(models.Project, pk=request.POST['projectId'])
+    project.status = models.Project.COMPLETED
+    project.save()
+
+    return redirect('dashboard')

@@ -33,7 +33,11 @@
                 </form>
             {% endif %}
             {% if project.status == project.IN_PROGRESS %}
-                <a role="button" href="#">Mark completed</a>
+                <form method="POST" action="{% url 'complete_project' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="projectId" value="{{ project.id }}">
+                    <input type="submit" value="Mark completed" onclick="confirmProjectComplete(event)">
+                </form>
             {% endif %}
         {% else %}
             {% if project.status == project.PAYABLE %}
@@ -65,6 +69,13 @@
     function confirmProjectReject(event) {
         if (!confirm(
             "Are you sure you want to reject the project?" +
+            " The effect is immediate and cannot be undone."
+        ))
+            event.preventDefault();
+    }
+    function confirmProjectComplete(event) {
+        if (!confirm(
+            "Are you sure you want to mark the project as completed?" +
             " The effect is immediate and cannot be undone."
         ))
             event.preventDefault();
