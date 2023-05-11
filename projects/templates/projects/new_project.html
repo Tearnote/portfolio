@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title_postfix %} - New project{% endblock %}
+
+{% block content %}
+
+<main>
+
+    <h2>New project</h2>
+    <form method="POST" action="{% url 'new_project' %}">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Create project">
+    </form>
+
+</main>
+
+{% endblock %}
