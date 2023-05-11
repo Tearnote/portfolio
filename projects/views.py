@@ -109,3 +109,17 @@ def complete_project(request):
     project.save()
 
     return redirect('dashboard')
+
+
+@staff_member_required
+@require_POST
+def quote_project(request):
+    """Set project quote and advance state
+    """
+
+    project = get_object_or_404(models.Project, pk=request.POST['projectId'])
+    project.quote_amount = int(request.POST['quoteAmount'])
+    project.status = models.Project.IN_PROGRESS
+    project.save()
+
+    return redirect('dashboard')

@@ -11,13 +11,14 @@
     <div class="actions">
         {% if is_owner %}
             {% if project.status == project.NEW %}
-                <form method="POST" action="#">
+                <form method="POST" action="{% url 'quote_project' %}">
                     {% csrf_token %}
+                    <input type="hidden" name="projectId" value="{{ project.id }}">
                     <label>
                         Amount:
-                        <input type="number" name="quote_amount">
+                        <input type="number" name="quoteAmount">
                     </label>
-                    <input type="submit" value="Set quote">
+                    <input type="submit" value="Set quote" onclick="confirmProjectQuote(event)">
                 </form>
                 <form method="POST" action="{% url 'reject_project' %}">
                     {% csrf_token %}
@@ -76,6 +77,13 @@
     function confirmProjectComplete(event) {
         if (!confirm(
             "Are you sure you want to mark the project as completed?" +
+            " The effect is immediate and cannot be undone."
+        ))
+            event.preventDefault();
+    }
+    function confirmProjectQuote(event) {
+        if (!confirm(
+            "Are you sure you want to submit the quote?" +
             " The effect is immediate and cannot be undone."
         ))
             event.preventDefault();
