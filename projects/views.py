@@ -1,3 +1,4 @@
+from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseNotAllowed, HttpResponseForbidden
 from django.shortcuts import render, redirect, get_object_or_404
@@ -84,15 +85,11 @@ def cancel_project(request):
     return redirect('dashboard')
 
 
-@login_required
+@staff_member_required
 @require_POST
 def reject_project(request):
     """Set project state to rejected
     """
-
-    # Confirm request is valid
-    if not request.user.is_staff:
-        return HttpResponseForbidden()
 
     project = get_object_or_404(models.Project, pk=request.POST['projectId'])
     project.status = models.Project.REJECTED
