@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponseNotAllowed
-from django.shortcuts import render, redirect
+from django.http import HttpResponseNotAllowed, HttpResponseForbidden
+from django.shortcuts import render, redirect, get_object_or_404
 from . import models, forms
 
 
@@ -63,3 +63,23 @@ def new_project(request):
         return create_new_project(request)
     else:
         return HttpResponseNotAllowed(['GET', 'POST'])
+
+
+@login_required
+def cancel_project(request):
+    """Set project state to cancelled
+    """
+
+    # Confirm request is valid
+    if request.method != 'POST':
+        return HttpResponseNotAllowed(['POST'])
+
+    # Confirm user is the website owner or owns the project being cancelled
+    project = get_object_or_404(models.Project, pk=request.POST['projectId'])
+    if not request.user.is_staff and project.user != request.user:
+        return HttpResponseForbidden()
+
+    project.status = models.Project.CANCELLED
+    project.save()
+
+    return redirect('dashboard')
