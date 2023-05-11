@@ -1,10 +1,13 @@
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseNotAllowed, HttpResponseForbidden
 from django.shortcuts import render, redirect, get_object_or_404
+from django.views.decorators.http import require_http_methods, require_POST, require_safe
+
 from . import models, forms
 
 
 @login_required
+@require_safe
 def dashboard(request):
     """Render the user/owner dashboard
     """
@@ -53,26 +56,22 @@ def create_new_project(request):
 
 
 @login_required
+@require_http_methods(['GET', 'HEAD', 'POST'])
 def new_project(request):
     """Dispatch new project requests
     """
 
-    if request.method == 'GET':
-        return render_new_project(request)
-    elif request.method == 'POST':
+    if request.method == 'POST':
         return create_new_project(request)
     else:
-        return HttpResponseNotAllowed(['GET', 'POST'])
+        return render_new_project(request)
 
 
 @login_required
+@require_POST
 def cancel_project(request):
     """Set project state to cancelled
     """
-
-    # Confirm request is valid
-    if request.method != 'POST':
-        return HttpResponseNotAllowed(['POST'])
 
     # Confirm user is the website owner or owns the project being cancelled
     project = get_object_or_404(models.Project, pk=request.POST['projectId'])
@@ -86,13 +85,12 @@ def cancel_project(request):
 
 
 @login_required
+@require_POST
 def reject_project(request):
     """Set project state to rejected
     """
 
     # Confirm request is valid
-    if request.method != 'POST':
-        return HttpResponseNotAllowed(['POST'])
     if not request.user.is_staff:
         return HttpResponseForbidden()
 
