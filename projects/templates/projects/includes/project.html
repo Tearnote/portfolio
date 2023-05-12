@@ -10,6 +10,8 @@
     </p>
     <div class="actions">
         {% if is_owner %}
+
+            {# Owner dashboard controls #}
             {% if project.status == project.NEW %}
                 <form method="POST" action="{% url 'quote_project' %}">
                     {% csrf_token %}
@@ -40,7 +42,10 @@
                     <input type="submit" value="Mark completed" onclick="confirmProjectComplete(event)">
                 </form>
             {% endif %}
+
         {% else %}
+
+            {# User dashboard controls #}
             {% if project.status == project.PAYABLE %}
                 <a role="button" href="#">Pay now</a>
             {% endif %}
@@ -52,8 +57,9 @@
                 </form>
             {% endif %}
             {% if project.status == project.COMPLETED %}
-                <a role="button" href="#">Leave testimonial</a>
+                <a role="button" href="{% url 'new_testimonial' project_id=project.id %}">Leave testimonial</a>
             {% endif %}
+
         {% endif %}
     </div>
 </div>

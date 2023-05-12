@@ -123,3 +123,50 @@ def quote_project(request):
     project.save()
 
     return redirect('dashboard')
+
+
+def create_new_testimonial(request, project_id):
+
+    # Create form from POST data
+    form = forms.TestimonialForm(request.POST)
+
+    # Check for consistency
+    project = get_object_or_404(models.Project, pk=project_id)
+    if project.user != request.user:
+        return HttpResponseForbidden()
+
+    # Fill in remaining fields
+    testimonial = form.save(commit=False)
+    testimonial.project = project
+    testimonial.save()
+
+    return redirect('dashboard')
+
+
+def render_new_testimonial(request, project_id):
+    """Render the new testimonial page
+    """
+
+    # Retrieve related project
+    project = get_object_or_404(models.Project, pk=project_id)
+
+    # Create form for new testimonial
+    form = forms.TestimonialForm()
+
+    context = {
+        'form': form,
+        'project': project,
+    }
+    return render(request, 'projects/new_testimonial.html', context)
+
+
+@login_required
+@require_http_methods(['GET', 'HEAD', 'POST'])
+def new_testimonial(request, project_id):
+    """Dispatch new testimonial requests
+    """
+
+    if request.method == 'POST':
+        return create_new_testimonial(request, project_id)
+    else:
+        return render_new_testimonial(request, project_id)

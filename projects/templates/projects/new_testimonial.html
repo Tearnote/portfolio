@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title_postfix %} - New testimonial{% endblock %}
+
+{% block content %}
+
+    <main>
+
+        <h2>Testimonial</h2>
+        {% include 'projects/includes/project.html' with project=project %}
+        <form method="POST" action="{% url 'new_testimonial' project_id=project.id %}">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Submit testimonial">
+        </form>
+
+    </main>
+
+{% endblock %}

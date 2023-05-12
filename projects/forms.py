@@ -13,3 +13,14 @@ class ProjectForm(forms.ModelForm):
             'name',
             'description',
         ]
+
+
+class TestimonialForm(forms.ModelForm):
+    """Form for creating a new testimonial
+    """
+
+    class Meta:
+        model = models.Testimonial
+        fields = [
+            'body',
+        ]
