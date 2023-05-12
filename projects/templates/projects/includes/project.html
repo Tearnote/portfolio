@@ -56,7 +56,7 @@
                     <input type="submit" value="Cancel" onclick="confirmProjectCancel(event)">
                 </form>
             {% endif %}
-            {% if project.status == project.COMPLETED %}
+            {% if project.status == project.COMPLETED and not project.testimonial %}
                 <a role="button" href="{% url 'new_testimonial' project_id=project.id %}">Leave testimonial</a>
             {% endif %}
 
