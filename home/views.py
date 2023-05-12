@@ -8,7 +8,8 @@ from projects import models
 
 @require_safe
 def index(request):
-    """Render the frontpage"""
+    """Render the frontpage
+    """
 
     # Retrieve random testimonials
     testimonials = models.Testimonial.objects.order_by('?')[:3]
