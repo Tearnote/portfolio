@@ -97,10 +97,11 @@
 
     <section id="testimonials">
         <h2>Testimonials</h2>
-        <article>
-            <a href="#" rel="external noopener nofollow" target="_blank"><h3>Something Industries</h3></a>
-            <p>Hubert was great, he made our website in 40.52 nanoseconds and boosted our income 79x!</p>
-        </article>
+        <div class="testimonial-list">
+            {% for testimonial in testimonials %}
+                {% include 'projects/includes/testimonial.html' with testimonial=testimonial %}
+            {% endfor %}
+        </div>
     </section>
 </main>
 
