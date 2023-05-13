@@ -47,7 +47,7 @@
 
             {# User dashboard controls #}
             {% if project.status == project.PAYABLE %}
-                <a role="button" href="{% url 'checkout' %}">Pay now</a>
+                <a role="button" href="{% url 'checkout' project_id=project.id %}">Pay now</a>
             {% endif %}
             {% if project.status == project.NEW or project.status == project.PAYABLE %}
                 <form method="POST" action="{% url 'cancel_project' %}">

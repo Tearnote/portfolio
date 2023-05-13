@@ -3,5 +3,5 @@ from . import views
 
 
 urlpatterns = [
-    path('', views.checkout, name='checkout'),
+    path('<int:project_id>/', views.checkout, name='checkout'),
 ]
