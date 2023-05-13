@@ -8,6 +8,32 @@
 
         <h2>Checkout</h2>
         {% include 'projects/includes/project.html' with project=project %}
+        <form id="payment-form">
+            <div id="link-authentication-element">
+                <!--Stripe.js injects the Link Authentication Element-->
+            </div>
+            <div id="payment-element">
+                <!--Stripe.js injects the Payment Element-->
+            </div>
+            <input type="submit" value="Pay now">
+        </form>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', async function() {
+                const stripe = Stripe("{{ stripe_publishable_key }}");
+                const response = await fetch("{% url 'create_payment_intent' %}", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded",
+                        "X-CSRFToken": "{{ csrf_token }}",
+                    },
+                    credentials: "include",
+                    body: "project_id={{ project.id }}",
+                });
+                const { clientSecret } = await response.json();
+                console.log(clientSecret);
+            });
+        </script>
 
     </main>
 
