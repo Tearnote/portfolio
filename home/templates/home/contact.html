@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title_postfix %} - Contact{% endblock %}
+
+{% block content %}
+
+    <main>
+
+        <h2>Contact</h2>
+        <form method="POST" action="{% url 'contact' %}">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Send message">
+        </form>
+
+    </main>
+
+{% endblock %}
