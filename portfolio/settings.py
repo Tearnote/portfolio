@@ -1,4 +1,5 @@
 import os
+import stripe
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -8,6 +9,10 @@ load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ['PORTFOLIO_SECRET_KEY']
+STRIPE_PUBLISHABLE_KEY = os.environ['PORTFOLIO_STRIPE_PUBLISHABLE_KEY']
+STRIPE_SECRET_KEY = os.environ['PORTFOLIO_STRIPE_SECRET_KEY']
+stripe.api_key = STRIPE_SECRET_KEY
+
 DEBUG = True  # Turn off in production!
 
 ALLOWED_HOSTS = ['localhost']
