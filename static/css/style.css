@@ -16,6 +16,21 @@ form {
     flex-flow: column;
 }
 
+input[type="text"],
+input[type="number"],
+input[type="url"],
+select {
+    height: 2.5em;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="url"],
+select,
+textarea {
+    padding: 0.4rem 0.5rem;
+}
+
 /*
     Make content take up all empty space if page
     is smaller than window height
