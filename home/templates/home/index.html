@@ -19,7 +19,9 @@
     </section>
 
     <section id="projects" class="headered">
-        <h2>My projects</h2>
+        <div class="header">
+            <h2>My projects</h2>
+        </div>
         <div class="content">
             <article>
                 <img src="#" alt="Screenshot of Minote rendering a test scene">
@@ -91,7 +93,9 @@
     </section>
 
     <section id="contact" class="headered">
-        <h2>Contact me</h2>
+        <div class="header">
+            <h2>Contact me</h2>
+        </div>
         <div class="content">
             <p>
                 If you would like to commission me for a project, you can use the
@@ -108,7 +112,9 @@
 
     {% if testimonials %}
         <section id="testimonials" class="headered">
-            <h2>Testimonials</h2>
+            <div class="header">
+                <h2>Testimonials</h2>
+            </div>
             <div class="content testimonial-list">
                 {% for testimonial in testimonials %}
                     {% include 'projects/includes/testimonial.html' with testimonial=testimonial %}

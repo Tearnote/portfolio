@@ -10,15 +10,34 @@ main {
     display: flex;
     flex-flow: row;
     width: 100%;
-    max-width: 1200px;
+    --headered-width: 1200px;
+    max-width: var(--headered-width);
     align-self: center;
-    padding: 1rem;
+    --headered-padding: 1rem;
+    padding: var(--headered-padding);
+    --headered-width-inner: calc(var(--headered-width) - 2 * var(--headered-padding));
 }
 
-.headered > h2 {
-    min-width: 25vw;
+.headered > .header {
+    --header-width-factor: 0.25;
+    --header-width: calc(100% * var(--header-width-factor));
+    min-width: var(--header-width);
     text-align: center;
     padding-top: 1rem;
+}
+
+.headered > .header > h2 {
+    height: 3rem;
+    vertical-align: center;
+    background-color: white;
+}
+
+.headered > .header > .fixed {
+    z-index: -1;
+    position: fixed;
+    top: var(--header-height);
+    left: calc(max(100vw - var(--headered-width-inner), 0) / 2);
+    width: calc(min(var(--headered-width-inner), 100vw) * var(--header-width-factor));
 }
 
 /* endregion */

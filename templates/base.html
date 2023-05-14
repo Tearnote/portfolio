@@ -51,5 +51,22 @@
     </ul>
 </footer>
 
+<script>
+    document.addEventListener("scroll", function(e) {
+        const headerHeight = document.getElementsByTagName("header")[0].offsetHeight;
+        let sections = document.querySelectorAll("section.headered");
+        for (let section of sections) {
+            let headered = section.getElementsByClassName("header")[0];
+            const headerOffset = parseInt(getComputedStyle(headered).getPropertyValue("padding-top"), 10);
+            let header = section.querySelector("h2");
+            const minOffset = headerHeight - headerOffset * 2;
+            if (section.getBoundingClientRect().top < minOffset)
+                header.classList.add("fixed");
+            else
+                header.classList.remove("fixed");
+        }
+    });
+</script>
+
 </body>
 </html>
