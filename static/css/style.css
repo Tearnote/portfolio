@@ -46,3 +46,27 @@ footer > ul > li {
 }
 
 /* endregion */
+
+/* region Eyecatch */
+
+#eyecatch {
+    min-height: 75vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#eyecatch > * {
+    margin-bottom: 2rem;
+}
+
+#eyecatch > h2 {
+    font-size: 4rem;
+}
+
+#eyecatch > p {
+    font-size: 1.5rem;
+}
+
+/* endregion */
