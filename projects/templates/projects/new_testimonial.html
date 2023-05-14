@@ -4,12 +4,18 @@
 
 {% block content %}
 
-<h2>Testimonial</h2>
-{% include 'projects/includes/project.html' with project=project %}
-<form method="POST" action="{% url 'new_testimonial' project_id=project.id %}">
-    {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Submit testimonial">
-</form>
+<section class="headered">
+    <div class="header">
+        <h2>Testimonial</h2>
+    </div>
+    <div class="content">
+        {% include 'projects/includes/project.html' with project=project %}
+        <form method="POST" action="{% url 'new_testimonial' project_id=project.id %}">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Submit testimonial">
+        </form>
+    </div>
+</section>
 
 {% endblock %}
