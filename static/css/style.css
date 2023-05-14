@@ -130,3 +130,29 @@ footer > ul > li {
 }
 
 /* endregion */
+
+/* region Testimonials */
+
+#testimonials > .content {
+    max-width: 36rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#testimonials > .content > article {
+    padding: 1rem 0;
+}
+
+#testimonials > .content > article > .body:before {
+    content: "\"";
+    display: inline-block;
+    vertical-align: bottom;
+    font-size: 2rem;
+    font-family: sans-serif;
+}
+
+#testimonials > .content > article > .signoff {
+    text-align: right;
+}
+
+/* endregion */
