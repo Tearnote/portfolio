@@ -10,7 +10,8 @@ body {
 }
 
 body,
-main {
+main,
+form {
     display: flex;
     flex-flow: column;
 }
@@ -22,6 +23,10 @@ main {
 main {
     flex: 1 0 auto;
 }
+
+/* endregion */
+
+/* region Section support */
 
 section:first-child {
     padding-top: var(--header-height);
@@ -210,6 +215,25 @@ footer > ul > li {
 
 #testimonials > .content > article > .signoff {
     text-align: right;
+}
+
+/* endregion */
+
+/* region Forms */
+
+form {
+    min-width: 32rem;
+}
+
+form > div,
+form > input {
+    display: flex;
+    flex-flow: column;
+    margin: 1rem 0 0;
+}
+
+form > input[type="submit"] {
+    align-self: center;
 }
 
 /* endregion */

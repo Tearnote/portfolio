@@ -12,7 +12,7 @@
         {% include 'projects/includes/project.html' with project=project %}
         <form method="POST" action="{% url 'new_testimonial' project_id=project.id %}">
             {% csrf_token %}
-            {{ form }}
+            {{ form.as_div }}
             <input type="submit" value="Submit testimonial">
         </form>
     </div>

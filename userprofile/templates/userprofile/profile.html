@@ -11,7 +11,7 @@
     <div class="content">
         <form method="POST" action="{% url 'profile' %}">
             {% csrf_token %}
-            {{ form }}
+            {{ form.as_div }}
             <input type="submit" value="Submit changes">
         </form>
     </div>

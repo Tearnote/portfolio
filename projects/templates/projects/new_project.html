@@ -11,7 +11,7 @@
     <div class="content">
         <form method="POST" action="{% url 'new_project' %}">
             {% csrf_token %}
-            {{ form }}
+            {{ form.as_div }}
             <input type="submit" value="Create project">
         </form>
     </div>

@@ -9,9 +9,9 @@
         <h2>Contact</h2>
     </div>
     <div class="content">
-        <form method="POST" action="{% url 'contact' %}">
+        <form method="POST" action="{% url 'contact' %}" id="contact-form">
             {% csrf_token %}
-            {{ form }}
+            {{ form.as_div }}
             <input type="submit" value="Send message">
         </form>
     </div>
