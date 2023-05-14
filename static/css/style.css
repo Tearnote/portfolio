@@ -23,6 +23,10 @@ main {
     flex: 1 0 auto;
 }
 
+section:first-child {
+    padding-top: var(--header-height);
+}
+
 .headered {
     display: flex;
     flex-flow: row;
@@ -118,7 +122,6 @@ footer > ul > li {
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    padding-top: var(--header-height);
 }
 
 #eyecatch > * {
