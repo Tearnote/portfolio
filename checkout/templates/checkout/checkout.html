@@ -38,7 +38,10 @@
 
         // Init Stripe Elements
         const appearance = {
-            theme: 'stripe',
+            theme: "stripe",
+            variables: {
+                borderRadius: "0",
+            },
         };
         let elements = stripe.elements({ appearance, clientSecret });
 
