@@ -16,10 +16,10 @@
                 <form method="POST" action="{% url 'quote_project' %}">
                     {% csrf_token %}
                     <input type="hidden" name="projectId" value="{{ project.id }}">
-                    <label>
-                        Amount:
-                        <input type="number" name="quoteAmount">
-                    </label>
+                    <div>
+                        <label for="quoteAmount">Amount:</label>
+                        <input type="number" id="quoteAmount" name="quoteAmount">
+                    </div>
                     <input type="submit" value="Set quote" onclick="confirmProjectQuote(event)">
                 </form>
                 <form method="POST" action="{% url 'reject_project' %}">

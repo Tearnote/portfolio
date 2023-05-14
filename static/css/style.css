@@ -237,3 +237,43 @@ form > input[type="submit"] {
 }
 
 /* endregion */
+
+/* region Projects */
+
+.project {
+    border: solid 1px black;
+    max-width: 36rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+.project > p {
+    margin: 0;
+}
+
+.project > .actions {
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-end;
+}
+
+.project > .actions > form {
+    flex-flow: row;
+    min-width: unset;
+}
+
+.project > .actions > form > div {
+    display: flex;
+    flex-flow: row;
+}
+
+.project > .actions > form > div > label {
+    margin-right: 0.5rem;
+}
+
+.project > .actions > form > div,
+.project > .actions > form > input[type="submit"] {
+    margin: 0.5rem 0 0 0.5rem;
+}
+
+/* endregion */
