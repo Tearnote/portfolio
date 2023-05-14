@@ -119,7 +119,7 @@ def quote_project(request):
 
     project = get_object_or_404(models.Project, pk=request.POST['projectId'])
     project.quote_amount = int(request.POST['quoteAmount'])
-    project.status = models.Project.IN_PROGRESS
+    project.status = models.Project.PAYABLE
     project.save()
 
     return redirect('dashboard')
