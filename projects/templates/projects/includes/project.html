@@ -26,14 +26,14 @@
                     <form method="POST" action="{% url 'reject_project' %}">
                         {% csrf_token %}
                         <input type="hidden" name="projectId" value="{{ project.id }}">
-                        <input type="submit" value="Reject" onclick="confirmProjectReject(event)">
+                        <input class="secondary" type="submit" value="Reject" onclick="confirmProjectReject(event)">
                     </form>
                 {% endif %}
                 {% if project.status == project.PAYABLE or project.status == project.IN_PROGRESS %}
                     <form method="POST" action="{% url 'cancel_project' %}">
                         {% csrf_token %}
                         <input type="hidden" name="projectId" value="{{ project.id }}">
-                        <input type="submit" value="Cancel" onclick="confirmProjectCancel(event)">
+                        <input class="secondary" type="submit" value="Cancel" onclick="confirmProjectCancel(event)">
                     </form>
                 {% endif %}
                 {% if project.status == project.IN_PROGRESS %}
@@ -54,7 +54,7 @@
                     <form method="POST" action="{% url 'cancel_project' %}">
                         {% csrf_token %}
                         <input type="hidden" name="projectId" value="{{ project.id }}">
-                        <input type="submit" value="Cancel" onclick="confirmProjectCancel(event)">
+                        <input class="secondary" type="submit" value="Cancel" onclick="confirmProjectCancel(event)">
                     </form>
                 {% endif %}
                 {% if project.status == project.COMPLETED and not project.testimonial %}

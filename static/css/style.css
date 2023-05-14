@@ -37,6 +37,14 @@ a[role="button"] {
     background-color: #37375d;
 }
 
+button.secondary,
+input[type="submit"].secondary,
+a[role="button"].secondary {
+    color: unset;
+    background-color: unset;
+    border: 1px solid #37375d;
+}
+
 button:focus,
 input[type="submit"]:focus,
 a[role="button"]:focus {
