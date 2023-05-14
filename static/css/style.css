@@ -27,3 +27,22 @@ header > nav > ul > li {
 }
 
 /* endregion */
+
+/* region Footer */
+
+footer {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    padding: 2rem 0;
+}
+
+footer > ul {
+    padding-left: 0;
+}
+
+footer > ul > li {
+    list-style: none;
+}
+
+/* endregion */
