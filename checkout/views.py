@@ -28,6 +28,9 @@ def create_payment_intent(request):
         automatic_payment_methods={
             'enabled': True,
         },
+        metadata={
+            'project_id': project.id,
+        },
     )
 
     return JsonResponse({
@@ -88,8 +91,15 @@ def webhook(request):
 
     # Handle the event
     if event['type'] == 'payment_intent.succeeded':
+        # Retrieve related project
         payment_intent = event['data']['object']
-        print(f'Payment {payment_intent["id"]} complete!')
+        project_id = payment_intent['metadata']['project_id']
+        project = get_object_or_404(models.Project, pk=project_id)
+
+        # Update project status
+        if project.status == models.Project.PAYABLE:
+            project.status = models.Project.IN_PROGRESS
+            project.save()
 
     # Return success
     return HttpResponse('Webhook processed')
