@@ -29,7 +29,7 @@ main {
 /* region Section support */
 
 section:first-child {
-    padding-top: var(--header-height);
+    padding-top: calc(var(--header-height) + 1rem);
 }
 
 .headered {
