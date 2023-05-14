@@ -267,6 +267,7 @@ form > input[type="submit"] {
 input[type="text"],
 input[type="number"],
 input[type="url"],
+input[type="email"],
 select,
 textarea {
     padding: 0.75rem;
@@ -278,6 +279,7 @@ textarea {
 input[type="text"]:focus,
 input[type="number"]:focus,
 input[type="url"]:focus,
+input[type="email"]:focus,
 select:focus,
 textarea:focus {
     border-color: hsla(210, 96%, 45%, 50%);
