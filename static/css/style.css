@@ -6,6 +6,21 @@ main {
     flex-flow: column;
 }
 
+.headered {
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+    max-width: 1200px;
+    align-self: center;
+    padding: 1rem;
+}
+
+.headered > h2 {
+    min-width: 25vw;
+    text-align: center;
+    padding-top: 1rem;
+}
+
 /* endregion */
 
 /* region Header */
@@ -74,19 +89,6 @@ footer > ul > li {
 
 /* region Projects */
 
-#projects {
-    display: flex;
-    flex-flow: row;
-    max-width: 1200px;
-    align-self: center;
-}
-
-#projects > h2 {
-    min-width: 25vw;
-    text-align: center;
-    padding-top: 1rem;
-}
-
 #projects > .content > article {
     display: flex;
     flex-flow: row-reverse;
@@ -104,7 +106,7 @@ footer > ul > li {
 
 #projects > .content > article > .description {
     text-align: right;
-    padding: 1rem;
+    padding: 1rem 1rem 0 0;
 }
 
 #projects > .content > article > .description > p {

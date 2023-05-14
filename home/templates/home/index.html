@@ -18,7 +18,7 @@
         <p>and delightful interfaces.</p>
     </section>
 
-    <section id="projects">
+    <section id="projects" class="headered">
         <h2>My projects</h2>
         <div class="content">
             <article>
@@ -90,23 +90,25 @@
         </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="headered">
         <h2>Contact me</h2>
-        <p>
-            If you would like to commission me for a project, you can use the
-            built-in request system! To get started, sign up
-            <a href="{% url 'account_signup' %}">here</a>. Your data will only be used for commission
-            management purposes.
-        </p>
-        <p>
-            For any other inquiries, feel free to use the
-            <a href="{% url 'contact' %}">contact form</a> to send me a message.
-        </p>
+        <div class="content">
+            <p>
+                If you would like to commission me for a project, you can use the
+                built-in request system! To get started, sign up
+                <a href="{% url 'account_signup' %}">here</a>. Your data will only be used for commission
+                management purposes.
+            </p>
+            <p>
+                For any other inquiries, feel free to use the
+                <a href="{% url 'contact' %}">contact form</a> to send me a message.
+            </p>
+        </div>
     </section>
 
-    <section id="testimonials">
+    <section id="testimonials" class="headered">
         <h2>Testimonials</h2>
-        <div class="testimonial-list">
+        <div class="content testimonial-list">
             {% for testimonial in testimonials %}
                 {% include 'projects/includes/testimonial.html' with testimonial=testimonial %}
             {% endfor %}
