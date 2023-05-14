@@ -4,16 +4,12 @@
 
 {% block content %}
 
-<main>
-
-    <h2>Projects</h2>
-    <div class="project-list">
-        {% for project in projects %}
-            {% include 'projects/includes/project.html' with project=project %}
-        {% endfor %}
-        <a role="button" href="{% url 'new_project' %}">New project</a>
-    </div>
-
-</main>
+<h2>Projects</h2>
+<div class="project-list">
+    {% for project in projects %}
+        {% include 'projects/includes/project.html' with project=project %}
+    {% endfor %}
+    <a role="button" href="{% url 'new_project' %}">New project</a>
+</div>
 
 {% endblock %}

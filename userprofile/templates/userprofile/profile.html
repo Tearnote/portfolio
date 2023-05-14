@@ -4,15 +4,11 @@
 
 {% block content %}
 
-    <main>
-
-        <h2>User profile</h2>
-        <form method="POST" action="{% url 'profile' %}">
-            {% csrf_token %}
-            {{ form }}
-            <input type="submit" value="Submit changes">
-        </form>
-
-    </main>
+<h2>User profile</h2>
+<form method="POST" action="{% url 'profile' %}">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit changes">
+</form>
 
 {% endblock %}

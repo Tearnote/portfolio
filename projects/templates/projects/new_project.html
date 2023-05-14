@@ -4,15 +4,11 @@
 
 {% block content %}
 
-<main>
-
-    <h2>New project</h2>
-    <form method="POST" action="{% url 'new_project' %}">
-        {% csrf_token %}
-        {{ form }}
-        <input type="submit" value="Create project">
-    </form>
-
-</main>
+<h2>New project</h2>
+<form method="POST" action="{% url 'new_project' %}">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Create project">
+</form>
 
 {% endblock %}
