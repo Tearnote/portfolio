@@ -28,12 +28,11 @@ main {
     --header-width: calc(100% * var(--header-width-factor));
     min-width: var(--header-width);
     text-align: center;
-    padding-top: 1rem;
 }
 
 .headered > .header > h2 {
-    height: 3rem;
-    vertical-align: center;
+    line-height: 4rem;
+    vertical-align: bottom;
     background-color: white;
 }
 
@@ -43,6 +42,7 @@ main {
     top: var(--header-height);
     left: calc(max(100vw - var(--headered-width-inner), 0) / 2);
     width: calc(min(var(--headered-width-inner), 100vw) * var(--header-width-factor));
+    padding-top: 1rem;
 }
 
 /* endregion */
