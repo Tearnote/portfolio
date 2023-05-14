@@ -119,3 +119,14 @@ footer > ul > li {
 }
 
 /* endregion */
+
+/* region Contact */
+
+#contact > .content {
+    max-width: 36rem;
+    margin: 0 auto;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+/* endregion */
