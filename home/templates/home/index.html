@@ -106,14 +106,16 @@
         </div>
     </section>
 
-    <section id="testimonials" class="headered">
-        <h2>Testimonials</h2>
-        <div class="content testimonial-list">
-            {% for testimonial in testimonials %}
-                {% include 'projects/includes/testimonial.html' with testimonial=testimonial %}
-            {% endfor %}
-        </div>
-    </section>
+    {% if testimonials %}
+        <section id="testimonials" class="headered">
+            <h2>Testimonials</h2>
+            <div class="content testimonial-list">
+                {% for testimonial in testimonials %}
+                    {% include 'projects/includes/testimonial.html' with testimonial=testimonial %}
+                {% endfor %}
+            </div>
+        </section>
+    {% endif %}
 </main>
 
 {% endblock %}
