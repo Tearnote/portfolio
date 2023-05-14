@@ -20,66 +20,74 @@
 
     <section id="projects">
         <h2>My projects</h2>
-        <article>
-            <h3>Minote</h3>
-            <img src="#" alt="Screenshot of Minote rendering a test scene">
-            <p>
-                A personal experimental renderer project. Written in C++ and
-                <a href="https://en.wikipedia.org/wiki/OpenGL_Shading_Language" rel="external noopener" target="_blank">GLSL</a>,
-                using
-                <a href="https://www.vulkan.org" rel="external noopener" target="_blank">Vulkan</a>
-                for graphics via the
-                <a href="https://github.com/martty/vuk" rel="external noopener" target="_blank">vuk</a>
-                library. Renders high triangle counts using
-                <a href="https://jcgt.org/published/0002/02/04/" rel="external noopener" target="_blank">visibility buffer</a>
-                and
-                <a href="https://developer.nvidia.com/blog/introduction-turing-mesh-shaders/" rel="external noopener" target="_blank">meshlets</a>
-                via
-                <a href="https://tellusim.com/mesh-shader-emulation/" rel="external noopener" target="_blank">mesh shader emulation</a>.
-                The image is antialiased using a
-                <a href="http://filmicworlds.com/blog/decoupled-visibility-multisampling/" rel="external noopener" target="_blank">custom solution</a>
-                that temporally amortizes MSAA resolve.
-            </p>
-            <p>
-                <a href="https://github.com/Tearnote/Minote/" rel="external noopener" target="_blank">Sources</a>
-            </p>
-        </article>
-        <article>
-            <h3>Gamecraft</h3>
-            <img src="#" alt="Screenshot of the Gamecraft website">
-            <p>
-                A static website for a fictional videogame creation program.
-                Plain HTML5 and CSS3, without frameworks. No Javascript, aside
-                from an inline one-liner to trigger audio playback. Fully
-                responsive layout, with
-                <a href="https://github.com/Tearnote/gamecraft-website/blob/main/doc/TESTING.md#validation" rel="external noopener" target="_blank">validated</a>
-                and semantic markup.
-            </p>
-            <p>
-                <a href="https://github.com/Tearnote/gamecraft-website" rel="external noopener" target="_blank">Sources</a>,
-                <a href="https://tearnote.github.io/gamecraft-website/" rel="external noopener" target="_blank">Live version</a>
-            </p>
-        </article>
-        <article>
-            <h3>Village of Chaos</h3>
-            <img src="#" alt="Screenshot of the browser game Village of Chaos">
-            <p>
-                An
-                <a href="https://en.wikipedia.org/wiki/Incremental_game" rel="external noopener" target="_blank">incremental</a>
-                (idle) browser game about managing a small village, with the
-                ultimate goal of unraveling the mystery of a distant monolith.
-                Written in pure HTML5, CSS3 and ES6 Javascript,
-                <a href="http://vanilla-js.com" rel="external noopener" target="_blank">without</a>
-                libraries of frameworks. Features media queries to switch
-                between desktop and mobile layouts, and uses a
-                <a href="https://developer.mozilla.org/en-US/docs/Web/Manifest" rel="external noopener" target="_blank">WebManifest</a>
-                to allow installation as an app on a mobile device.
-            </p>
-            <p>
-                <a href="https://github.com/Tearnote/village-of-chaos" rel="external noopener" target="_blank">Sources</a>,
-                <a href="https://tearnote.github.io/village-of-chaos/" rel="external noopener" target="_blank">Live version</a>
-            </p>
-        </article>
+        <div class="content">
+            <article>
+                <img src="#" alt="Screenshot of Minote rendering a test scene">
+                <div class="description">
+                    <h3>Minote</h3>
+                    <p>
+                        A personal experimental renderer project. Written in C++ and
+                        <a href="https://en.wikipedia.org/wiki/OpenGL_Shading_Language" rel="external noopener" target="_blank">GLSL</a>,
+                        using
+                        <a href="https://www.vulkan.org" rel="external noopener" target="_blank">Vulkan</a>
+                        for graphics via the
+                        <a href="https://github.com/martty/vuk" rel="external noopener" target="_blank">vuk</a>
+                        library. Renders high triangle counts using
+                        <a href="https://jcgt.org/published/0002/02/04/" rel="external noopener" target="_blank">visibility buffer</a>
+                        and
+                        <a href="https://developer.nvidia.com/blog/introduction-turing-mesh-shaders/" rel="external noopener" target="_blank">meshlets</a>
+                        via
+                        <a href="https://tellusim.com/mesh-shader-emulation/" rel="external noopener" target="_blank">mesh shader emulation</a>.
+                        The image is antialiased using a
+                        <a href="http://filmicworlds.com/blog/decoupled-visibility-multisampling/" rel="external noopener" target="_blank">custom solution</a>
+                        that temporally amortizes MSAA resolve.
+                    </p>
+                    <p class="links">
+                        <a href="https://github.com/Tearnote/Minote/" rel="external noopener" target="_blank">Sources</a>
+                    </p>
+                </div>
+            </article>
+            <article>
+                <img src="#" alt="Screenshot of the Gamecraft website">
+                <div class="description">
+                    <h3>Gamecraft</h3>
+                    <p>
+                        A static website for a fictional videogame creation program.
+                        Plain HTML5 and CSS3, without frameworks. No Javascript, aside
+                        from an inline one-liner to trigger audio playback. Fully
+                        responsive layout, with
+                        <a href="https://github.com/Tearnote/gamecraft-website/blob/main/doc/TESTING.md#validation" rel="external noopener" target="_blank">validated</a>
+                        and semantic markup.
+                    </p>
+                    <p class="links">
+                        <a href="https://github.com/Tearnote/gamecraft-website" rel="external noopener" target="_blank">Sources</a>,
+                        <a href="https://tearnote.github.io/gamecraft-website/" rel="external noopener" target="_blank">Live version</a>
+                    </p>
+                </div>
+            </article>
+            <article>
+                <img src="#" alt="Screenshot of the browser game Village of Chaos">
+                <div class="description">
+                    <h3>Village of Chaos</h3>
+                    <p>
+                        An
+                        <a href="https://en.wikipedia.org/wiki/Incremental_game" rel="external noopener" target="_blank">incremental</a>
+                        (idle) browser game about managing a small village, with the
+                        ultimate goal of unraveling the mystery of a distant monolith.
+                        Written in pure HTML5, CSS3 and ES6 Javascript,
+                        <a href="http://vanilla-js.com" rel="external noopener" target="_blank">without</a>
+                        libraries of frameworks. Features media queries to switch
+                        between desktop and mobile layouts, and uses a
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/Manifest" rel="external noopener" target="_blank">WebManifest</a>
+                        to allow installation as an app on a mobile device.
+                    </p>
+                    <p class="links">
+                        <a href="https://github.com/Tearnote/village-of-chaos" rel="external noopener" target="_blank">Sources</a>,
+                        <a href="https://tearnote.github.io/village-of-chaos/" rel="external noopener" target="_blank">Live version</a>
+                    </p>
+                </div>
+            </article>
+        </div>
     </section>
 
     <section id="contact">

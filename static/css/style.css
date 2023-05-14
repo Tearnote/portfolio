@@ -1,6 +1,7 @@
 /* region Global styles */
 
-body {
+body,
+main {
     display: flex;
     flex-flow: column;
 }
@@ -67,6 +68,52 @@ footer > ul > li {
 
 #eyecatch > p {
     font-size: 1.5rem;
+}
+
+/* endregion */
+
+/* region Projects */
+
+#projects {
+    display: flex;
+    flex-flow: row;
+    max-width: 1200px;
+    align-self: center;
+}
+
+#projects > h2 {
+    min-width: 25vw;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+#projects > .content > article {
+    display: flex;
+    flex-flow: row-reverse;
+    padding: 2rem 0;
+}
+
+#projects > .content > article > img {
+    flex: 1 0 auto;
+    width: 50%;
+    height: 16rem;
+    object-fit: contain;
+    overflow: hidden;
+    background-color: lightgrey;
+}
+
+#projects > .content > article > .description {
+    text-align: right;
+    padding: 1rem;
+}
+
+#projects > .content > article > .description > p {
+    text-align: justify;
+    padding: 0.5rem 0;
+}
+
+#projects > .content > article > .description > .links {
+    text-align: center;
 }
 
 /* endregion */
