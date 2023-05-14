@@ -24,6 +24,30 @@ main {
     flex: 1 0 auto;
 }
 
+button,
+input[type="submit"],
+a[role="button"] {
+    border: 1px solid black;
+    text-decoration: none;
+    color: black;
+    line-height: 1.2;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+    background-color: #daf4fa;
+}
+
+button:hover,
+input[type="submit"]:hover,
+a[role="button"]:hover {
+    background-color: #c9dfe5;
+}
+
+button:focus,
+input[type="submit"]:focus,
+a[role="button"]:focus {
+    background-color: #b4cdd3;
+}
+
 /* endregion */
 
 /* region Section support */
@@ -272,7 +296,9 @@ form > input[type="submit"] {
 }
 
 .project > .actions > form > div,
-.project > .actions > form > input[type="submit"] {
+.project > .actions > form > input[type="submit"],
+.project > .actions > a[role="button"],
+.project > .actions > button {
     margin: 0.5rem 0 0 0.5rem;
 }
 
