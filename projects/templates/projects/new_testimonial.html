@@ -9,7 +9,7 @@
         <h2>Testimonial</h2>
     </div>
     <div class="content">
-        {% include 'projects/includes/project.html' with project=project %}
+        {% include 'projects/includes/project.html' with project=project noaction=True %}
         <form method="POST" action="{% url 'new_testimonial' project_id=project.id %}">
             {% csrf_token %}
             {{ form.as_div }}
