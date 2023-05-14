@@ -50,3 +50,12 @@ def checkout(request, project_id):
         'stripe_publishable_key': portfolio.settings.STRIPE_PUBLISHABLE_KEY,
     }
     return render(request, 'checkout/checkout.html', context)
+
+
+@login_required
+@require_safe
+def checkout_complete(request):
+    """Render the checkout complete page
+    """
+
+    return render(request, 'checkout/complete.html')
