@@ -7,7 +7,38 @@
     <main>
 
         <h2>Checkout complete!</h2>
-        <p>Thank you for your payment. You will receive a confirmation by email.</p>
+        <p id="payment-status"><!-- Filled in by Stripe payment status --></p>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', async function() {
+                // Retrieve client secret from query string
+                const clientSecret = new URLSearchParams(window.location.search).get(
+                    "payment_intent_client_secret"
+                );
+                if (!clientSecret) return;
+
+                // Init Stripe
+                const stripe = Stripe("{{ stripe_publishable_key }}");
+
+                // Display payment status
+                let statusEl = document.getElementById("payment-status");
+                const { paymentIntent } = await stripe.retrievePaymentIntent(clientSecret);
+                switch (paymentIntent.status) {
+                    case "succeeded":
+                        statusEl.innerText = "Thank you for your payment. You will receive a confirmation by email.";
+                        break;
+                    case "processing":
+                        statusEl.innerText = "Your payment is processing. You will receive further details by email.";
+                        break;
+                    case "requires_payment_method":
+                        statusEl.innerText = "Your payment was unsuccessful, and you haven't been charged. Please try again.";
+                        break;
+                    default:
+                        statusEl.innerText = "Apologies! Something went wrong, and you haven't been charged. Please try again.";
+                        break;
+                }
+            });
+        </script>
 
     </main>
 

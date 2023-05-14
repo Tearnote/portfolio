@@ -58,4 +58,7 @@ def checkout_complete(request):
     """Render the checkout complete page
     """
 
-    return render(request, 'checkout/complete.html')
+    context = {
+        'stripe_publishable_key': portfolio.settings.STRIPE_PUBLISHABLE_KEY,
+    }
+    return render(request, 'checkout/complete.html', context)
