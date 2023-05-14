@@ -1,7 +1,8 @@
 import stripe
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponseBadRequest, JsonResponse
+from django.http import HttpResponseBadRequest, JsonResponse, HttpResponse
 from django.shortcuts import render, get_object_or_404
+from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST, require_safe
 
 import portfolio.settings
@@ -62,3 +63,33 @@ def checkout_complete(request):
         'stripe_publishable_key': portfolio.settings.STRIPE_PUBLISHABLE_KEY,
     }
     return render(request, 'checkout/complete.html', context)
+
+
+@require_POST
+@csrf_exempt
+def webhook(request):
+    """Handle Stripe webhook
+    """
+
+    # Retrieve webhook components
+    payload = request.body
+    signature = request.headers['STRIPE_SIGNATURE']
+    endpoint_secret = portfolio.settings.STRIPE_WEBHOOK_SECRET
+
+    # Construct the webhook event
+    try:
+        event = stripe.Webhook.construct_event(
+            payload, signature, endpoint_secret
+        )
+    except ValueError as e:
+        return HttpResponseBadRequest(f'Invalid payload: {str(e)}')
+    except stripe.error.SignatureVerificationError as e:
+        return HttpResponseBadRequest(f'Signature verification error: {str(e)}')
+
+    # Handle the event
+    if event['type'] == 'payment_intent.succeeded':
+        payment_intent = event['data']['object']
+        print(f'Payment {payment_intent["id"]} complete!')
+
+    # Return success
+    return HttpResponse('Webhook processed')

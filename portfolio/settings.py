@@ -11,6 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ['PORTFOLIO_SECRET_KEY']
 STRIPE_PUBLISHABLE_KEY = os.environ['PORTFOLIO_STRIPE_PUBLISHABLE_KEY']
 STRIPE_SECRET_KEY = os.environ['PORTFOLIO_STRIPE_SECRET_KEY']
+STRIPE_WEBHOOK_SECRET = os.environ['PORTFOLIO_STRIPE_WEBHOOK_SECRET']
 stripe.api_key = STRIPE_SECRET_KEY
 
 DEBUG = True  # Turn off in production!
