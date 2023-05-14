@@ -5,10 +5,22 @@ html {
     scroll-padding-top: var(--header-height);
 }
 
+body {
+    min-height: 100vh;
+}
+
 body,
 main {
     display: flex;
     flex-flow: column;
+}
+
+/*
+    Make content take up all empty space if page
+    is smaller than window height
+ */
+main {
+    flex: 1 0 auto;
 }
 
 .headered {
