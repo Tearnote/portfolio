@@ -1,5 +1,10 @@
 /* region Global styles */
 
+html {
+    --header-height: 4rem;
+    scroll-padding-top: var(--header-height);
+}
+
 body,
 main {
     display: flex;
@@ -43,10 +48,6 @@ main {
 /* endregion */
 
 /* region Header */
-
-body {
-    --header-height: 4rem;
-}
 
 header {
     position: fixed;
