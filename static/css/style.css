@@ -39,6 +39,10 @@ section:first-child {
     --headered-width-inner: calc(var(--headered-width) - 2 * var(--headered-padding));
 }
 
+.headered.reverse {
+    flex-flow: row-reverse;
+}
+
 .headered > .header {
     --header-width-factor: 0.25;
     --header-width: calc(100% * var(--header-width-factor));
@@ -59,6 +63,10 @@ section:first-child {
     left: calc(max(100vw - var(--headered-width-inner), 0) / 2);
     width: calc(min(var(--headered-width-inner), 100vw) * var(--header-width-factor));
     padding-top: 1rem;
+}
+
+.headered .content {
+    margin: 0 auto;
 }
 
 /* endregion */
@@ -175,7 +183,6 @@ footer > ul > li {
 
 #contact > .content {
     max-width: 36rem;
-    margin: 0 auto;
     padding: 2rem 0;
     text-align: center;
 }
@@ -186,7 +193,6 @@ footer > ul > li {
 
 #testimonials > .content {
     max-width: 36rem;
-    margin: 0 auto;
     text-align: center;
 }
 
