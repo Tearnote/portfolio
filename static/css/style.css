@@ -509,10 +509,13 @@ textarea:focus {
 
 /* region Projects */
 
+#dashboard-projects a[role="button"] {
+    width: fit-content;
+}
+
 .project {
     border: 1px solid #e6e6e6;
     box-shadow: rgba(0, 0, 0, 0.25) 0 25px 50px -12px;
-    max-width: 36rem;
     margin-bottom: 1rem;
     padding: 1rem;
 }
