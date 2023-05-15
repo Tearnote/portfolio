@@ -61,7 +61,6 @@ def create_new_project(request):
         'sender': request.user,
         'project': project,
     }
-    owners = User.objects.filter(is_staff=True)
 
     user_email = (
         render_to_string(
@@ -85,7 +84,7 @@ def create_new_project(request):
             email_context, request
         ),
         None,
-        [owner.email for owner in owners],
+        [owner.email for owner in User.objects.filter(is_staff=True)],
     )
 
     send_mass_mail((user_email, owner_email))
@@ -183,7 +182,7 @@ def complete_project(request):
     project.status = models.Project.COMPLETED
     project.save()
 
-    # Send email notification to website owner
+    # Send email notification to project owner
     email_context = {
         'project': project,
     }

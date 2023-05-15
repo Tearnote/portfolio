@@ -1,0 +1,16 @@
+{% extends "account/email/base_message.txt" %}
+
+{% block content %}{% autoescape off %}
+Thank you for your purchase! The website owner will now begin work on your
+commission. You will receive regular progress emails, and you are free to reply
+back with any additional input.
+
+Project name: {{ project.name }}
+
+Project reference code:
+{{ project.uuid }}
+
+You can always check the status of your projects on your dashboard:
+{{ request.scheme }}://{{ request.get_host }}{% url 'dashboard' %}
+
+{% endautoescape %}{% endblock %}

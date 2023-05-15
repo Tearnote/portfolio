@@ -1,7 +1,10 @@
 import stripe
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from django.core.mail import send_mass_mail
 from django.http import HttpResponseBadRequest, JsonResponse, HttpResponse
 from django.shortcuts import render, get_object_or_404
+from django.template.loader import render_to_string
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST, require_safe
 
@@ -101,6 +104,39 @@ def webhook(request):
         if project.status == models.Project.PAYABLE:
             project.status = models.Project.IN_PROGRESS
             project.save()
+
+        # Send email notification to project and website owner
+        email_context = {
+            'creator': project.user,
+            'project': project,
+        }
+
+        user_email = (
+            render_to_string(
+                'checkout/email/project_paid_user_subject.txt',
+                email_context, request
+            ).strip(),
+            render_to_string(
+                'checkout/email/project_paid_user_message.txt',
+                email_context, request
+            ),
+            None,
+            [project.user.email],
+        )
+        owner_email = (
+            render_to_string(
+                'checkout/email/project_paid_owner_subject.txt',
+                email_context, request
+            ).strip(),
+            render_to_string(
+                'checkout/email/project_paid_owner_message.txt',
+                email_context, request
+            ),
+            None,
+            [owner.email for owner in User.objects.filter(is_staff=True)],
+        )
+
+        send_mass_mail((user_email, owner_email))
 
     # Return success
     return HttpResponse('Webhook processed')

@@ -1,0 +1,3 @@
+{% autoescape off %}
+User {{ creator }} paid for project "{{ project.name }}"
+{% endautoescape %}
