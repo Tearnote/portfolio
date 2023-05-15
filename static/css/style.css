@@ -88,6 +88,10 @@ section:first-child {
     padding-top: calc(var(--header-height) + 1rem);
 }
 
+section:last-of-type {
+    margin-bottom: -2rem;
+}
+
 .headered {
     display: flex;
     flex-flow: row;
@@ -183,6 +187,7 @@ header > nav > ul > li {
 /* region Footer */
 
 footer {
+    z-index: 20;
     display: flex;
     flex-flow: row;
     justify-content: space-evenly;
