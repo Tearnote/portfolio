@@ -113,11 +113,16 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 3
-LOGIN_URL = '/accounts/login/'
+LOGIN_URL = '/user/login/'
 LOGIN_REDIRECT_URL = 'dashboard'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = os.environ['PORTFOLIO_EMAIL_HOST']
+EMAIL_HOST_USER = os.environ['PORTFOLIO_EMAIL_USER']
+EMAIL_HOST_PASSWORD = os.environ['PORTFOLIO_EMAIL_PASSWORD']
+EMAIL_PORT = os.environ['PORTFOLIO_EMAIL_PORT']
+DEFAULT_FROM_EMAIL = 'Hubert Maraszek Portfolio'
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
@@ -137,8 +142,8 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
-    BASE_DIR / "vendor",
+    BASE_DIR / 'static',
+    BASE_DIR / 'vendor',
 ]
 
 INTERNAL_IPS = ['127.0.0.1', ]
