@@ -1,0 +1,24 @@
+{% extends "account/email/base_message.txt" %}
+
+{% block content %}{% autoescape off %}
+{% if by_owner %}
+Your project "{{ project.name }}" has been cancelled by the website owner.
+If you are unsure of the reason behind the cancellation, you should have
+received another email by the website owner, or will receive it soon.
+
+Project reference code:
+{{ project.uuid }}
+{% else %}
+A project has been cancelled by the user.
+
+User: {{ creator }}
+
+Name: {{ project.name }}
+
+Description:
+{{ project.description }}
+
+Reference code:
+{{ project.uuid }}
+{% endif %}
+{% endautoescape %}{% endblock %}

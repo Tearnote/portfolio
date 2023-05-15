@@ -119,6 +119,28 @@ def cancel_project(request):
     project.status = models.Project.CANCELLED
     project.save()
 
+    # Send email notification to project owner / site owner
+    email_context = {
+        'project': project,
+        'creator': project.user,
+        'by_owner': request.user.is_staff
+    }
+    if request.user.is_staff:
+        recipients = [project.user.email]
+    else:
+        recipients = [owner.email for owner in User.objects.filter(is_staff=True)]
+    send_mail(
+        render_to_string(
+            'projects/email/project_cancelled_subject.txt',
+            email_context, request
+        ).strip(),
+        render_to_string(
+            'projects/email/project_cancelled_message.txt',
+            email_context, request
+        ),
+        None, recipients,
+    )
+
     return redirect('dashboard')
 
 
