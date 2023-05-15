@@ -107,6 +107,7 @@ section:first-child {
     text-align: center;
     background-color: var(--dark-background-color);
     color: var(--background-color);
+    box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
 }
 
 .headered > .header > h2 {
