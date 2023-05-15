@@ -314,10 +314,10 @@ footer > ul > li {
     justify-content: center;
     align-items: center;
     padding: 1.6rem 2.4rem 0.8rem;
+    background-color: white;
     background-image:
-        radial-gradient(#ede9f8 25%, transparent 25%),
-        radial-gradient(#eee9ff 25%, transparent 25%);
-    background-color: var(--background-color);
+            radial-gradient(#f8f8f8 25%, transparent 25%),
+            radial-gradient(#fafafa 25%, transparent 25%);
     background-position: 0 0, 50px 50px;
     background-size: 100px 100px;
     transform: rotate(-0.6deg);
