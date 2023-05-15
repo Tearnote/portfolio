@@ -97,6 +97,10 @@ section:last-of-type {
     margin-bottom: -2rem;
 }
 
+section:last-of-type > .content {
+    padding-bottom: 4rem;
+}
+
 .headered {
     flex: 1 0 auto;
     display: flex;
