@@ -1,7 +1,10 @@
-{% load i18n %}{% autoescape off %}{% blocktrans with site_name=current_site.name %}Hello from {{ site_name }}!{% endblocktrans %}
+{% autoescape off %}Hello from Hubert Maraszek - Portfolio!
 
 {% block content %}{% endblock %}
 
-{% blocktrans with site_name=current_site.name site_domain=current_site.domain %}Thank you for using {{ site_name }}!
-{{ site_domain }}{% endblocktrans %}
+Hubert Maraszek - Portfolio
+
+You are receiving this email because of an action that was relevant to your
+user account. Rest assured that you will not receive any unsolicited emails
+from this address.
 {% endautoescape %}
