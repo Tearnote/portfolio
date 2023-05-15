@@ -2,7 +2,9 @@
 
 html {
     --header-height: 4rem;
+
     --primary-color: #37375d;
+    --background-color: #f0edff;
     --highlight-color: #00c893;
 
     scroll-padding-top: var(--header-height);
@@ -212,15 +214,26 @@ footer > ul > li {
     transform: rotate(4deg);
 }
 
-#eyecatch > h2 {
+#eyecatch > .content {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background: var(--background-color);
+    transform: rotate(-0.6deg);
+    box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+}
+
+#eyecatch > .content > h2 {
     font-size: 4rem;
 }
 
-#eyecatch > p {
+#eyecatch > .content > p {
     font-size: 1.5rem;
 }
 
-#eyecatch > .arrow {
+#eyecatch > .content > .arrow {
     margin: -1rem 0;
     font-size: 3rem;
 }
