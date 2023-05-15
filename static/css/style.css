@@ -144,6 +144,12 @@ section:last-of-type {
     padding: 2rem 1rem;
 }
 
+
+.headered.small > .content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
 /* endregion */
 
 /* region Header */
