@@ -141,6 +141,11 @@ section:last-of-type > .content {
     width: var(--header-width);
 }
 
+.headered.reverse > .header > .fixed {
+    left: unset;
+    right: 0;
+}
+
 .headered .content {
     --content-width-factor: calc(1 - var(--header-width-factor));
     --content-width: calc(100% * var(--content-width-factor));
