@@ -1,8 +1,11 @@
 from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponseNotAllowed, HttpResponseForbidden
+from django.contrib.auth.models import User
+from django.core.mail import send_mass_mail
+from django.http import HttpResponseForbidden
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.decorators.http import require_http_methods, require_POST, require_safe
+from django.template.loader import render_to_string
 
 from . import models, forms
 
@@ -52,6 +55,40 @@ def create_new_project(request):
     project = form.save(commit=False)
     project.user = request.user
     project.save()
+
+    # Notify user and owners by email
+    email_context = {
+        'sender': request.user,
+        'project': project,
+    }
+    owners = User.objects.filter(is_staff=True)
+
+    user_email = (
+        render_to_string(
+            'projects/email/project_created_user_subject.txt',
+            email_context, request
+        ).strip(),
+        render_to_string(
+            'projects/email/project_created_user_message.txt',
+            email_context, request
+        ),
+        None,
+        [request.user.email],
+    )
+    owner_email = (
+        render_to_string(
+            'projects/email/project_created_owner_subject.txt',
+            email_context, request
+        ).strip(),
+        render_to_string(
+            'projects/email/project_created_owner_message.txt',
+            email_context, request
+        ),
+        None,
+        [owner.email for owner in owners],
+    )
+
+    send_mass_mail((user_email, owner_email))
 
     return redirect('dashboard')
 

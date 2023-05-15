@@ -1,0 +1,16 @@
+{% extends "account/email/base_message.txt" %}
+
+{% block content %}{% autoescape off %}
+New project has been created.
+
+User: {{ creator }}
+
+Name: {{ project.name }}
+
+Description:
+{{ project.description }}
+
+Reference code:
+{{ project.uuid }}
+
+{% endautoescape %}{% endblock %}

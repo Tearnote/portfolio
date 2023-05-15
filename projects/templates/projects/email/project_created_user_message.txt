@@ -1,0 +1,12 @@
+{% extends "account/email/base_message.txt" %}
+
+{% block content %}{% autoescape off %}
+The project called "{{ project.name }}" has been created and submitted for
+review. Once there's an update available, you will receive another email.
+In the meantime, if you have any additional information to provide, you may
+feel free to reply to this message.
+
+Project reference code:
+{{ project.uuid }}
+
+{% endautoescape %}{% endblock %}
