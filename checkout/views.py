@@ -25,6 +25,7 @@ def create_payment_intent(request):
     intent = stripe.PaymentIntent.create(
         amount=project.quote_amount * 100,
         currency='eur',
+        receipt_email=project.user.email,
         automatic_payment_methods={
             'enabled': True,
         },
