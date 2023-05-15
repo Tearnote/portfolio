@@ -519,6 +519,10 @@ form > input {
     margin: 1rem 0 0;
 }
 
+#payment-element {
+    flex-flow: column;
+}
+
 form > .actions {
     justify-content: center;
 }
