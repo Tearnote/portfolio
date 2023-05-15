@@ -248,6 +248,24 @@ footer > ul > li {
 
 /* region Showcase */
 
+#projects {
+    position: relative;
+}
+
+#projects:after {
+    z-index: -11;
+    display: block;
+    content: "";
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    width: 110%;
+    height: 110%;
+    background-color: var(--background-color);
+    box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+    transform: rotate(4deg);
+}
+
 #projects > .content > article {
     display: flex;
     flex-flow: row-reverse;
