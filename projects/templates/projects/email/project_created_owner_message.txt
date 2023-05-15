@@ -13,4 +13,6 @@ Description:
 Reference code:
 {{ project.uuid }}
 
+View the project here - {{ request.scheme }}://{{ request.get_host }}{% url 'dashboard' %}
+
 {% endautoescape %}{% endblock %}

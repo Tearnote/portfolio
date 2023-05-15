@@ -9,4 +9,7 @@ feel free to reply to this message.
 Project reference code:
 {{ project.uuid }}
 
+You can always check the status of your projects on your dashboard:
+{{ request.scheme }}://{{ request.get_host }}{% url 'dashboard' %}
+
 {% endautoescape %}{% endblock %}
