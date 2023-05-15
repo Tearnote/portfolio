@@ -515,8 +515,16 @@ form {
 form > div,
 form > input {
     display: flex;
-    flex-flow: column;
+    flex-flow: row wrap;
     margin: 1rem 0 0;
+}
+
+form > .actions {
+    justify-content: center;
+}
+
+form > .actions > :not(:last-child) {
+    margin-right: 0.5rem;
 }
 
 form > input[type="submit"] {
@@ -527,18 +535,25 @@ input[type="text"],
 input[type="number"],
 input[type="url"],
 input[type="email"],
+input[type="password"],
 select,
 textarea {
+    width: 100%;
     padding: 0.75rem;
     border: 1px solid #e6e6e6;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.03), 0 3px 6px rgba(0, 0, 0, 0.02);
     transition: background 0.15s ease, border 0.15s ease, box-shadow 0.15s ease, color 0.15s ease;
 }
 
+input[type="checkbox"] {
+    margin-left: 0.25rem;
+}
+
 input[type="text"]:focus,
 input[type="number"]:focus,
 input[type="url"]:focus,
 input[type="email"]:focus,
+input[type="password"]:focus,
 select:focus,
 textarea:focus {
     border-color: hsla(210, 96%, 45%, 50%);
