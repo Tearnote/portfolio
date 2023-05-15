@@ -6,6 +6,7 @@ html {
     --primary-color: #37375d;
     --background-color: #f0edff;
     --highlight-color: #00c893;
+    --dark-background-color: #686690;
 
     scroll-padding-top: var(--header-height);
 }
@@ -100,18 +101,24 @@ section:first-child {
 
 .headered > .header {
     position: relative;
+    top: -2rem;
+    padding-top: 4rem;
     width: var(--header-width);
     text-align: center;
+    background-color: var(--dark-background-color);
+    color: var(--background-color);
 }
 
 .headered > .header > h2 {
+    z-index: 2;
+    position: relative;
     line-height: 4rem;
     vertical-align: bottom;
-    background-color: white;
+    background-color: var(--dark-background-color);
 }
 
 .headered > .header > .fixed {
-    z-index: -1;
+    z-index: 1;
     position: fixed;
     top: var(--header-height);
     left: 0;
@@ -193,6 +200,7 @@ footer > ul > li {
 /* region Eyecatch */
 
 #eyecatch {
+    z-index: 10;
     position: relative;
     min-height: 75vh;
     display: flex;

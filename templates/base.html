@@ -62,14 +62,14 @@
         const headerHeight = document.getElementsByTagName("header")[0].offsetHeight;
         let sections = document.querySelectorAll("section.headered");
         for (let section of sections) {
-            let headered = section.getElementsByClassName("header")[0];
-            const headerOffset = parseInt(getComputedStyle(headered).getPropertyValue("padding-top"), 10);
-            let header = section.querySelector("h2");
-            const minOffset = headerHeight - headerOffset * 2;
+            let header = section.querySelector(".header");
+            let heading = section.querySelector("h2");
+            const headerOffset = parseInt(getComputedStyle(header).getPropertyValue("top"), 10);
+            const minOffset = headerHeight + headerOffset;
             if (section.getBoundingClientRect().top < minOffset)
-                header.classList.add("fixed");
+                heading.classList.add("fixed");
             else
-                header.classList.remove("fixed");
+                heading.classList.remove("fixed");
         }
     });
 </script>
