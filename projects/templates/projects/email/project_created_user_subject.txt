@@ -1,3 +1,3 @@
 {% autoescape off %}
-Project {{ project.name }} created!
+Project "{{ project.name }}" created!
 {% endautoescape %}

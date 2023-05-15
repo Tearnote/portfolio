@@ -1,0 +1,13 @@
+{% extends "account/email/base_message.txt" %}
+
+{% block content %}{% autoescape off %}
+Your project "{{ project.name }}" has just received a quote from the website
+owner. The quote is for the amount of {{ project.quote_amount }} EUR.
+
+If you're interested in making this commission, you can visit your dashboard
+to make the payment online via our secure gateway.
+
+Project reference code:
+{{ project.uuid }}
+
+{% endautoescape %}{% endblock %}

@@ -1,7 +1,7 @@
 from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.core.mail import send_mass_mail
+from django.core.mail import send_mass_mail, send_mail
 from django.http import HttpResponseForbidden
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.decorators.http import require_http_methods, require_POST, require_safe
@@ -158,6 +158,22 @@ def quote_project(request):
     project.quote_amount = int(request.POST['quoteAmount'])
     project.status = models.Project.PAYABLE
     project.save()
+
+    # Send email notification to project owner
+    email_context = {
+        'project': project,
+    }
+    send_mail(
+        render_to_string(
+            'projects/email/project_quoted_user_subject.txt',
+            email_context, request
+        ).strip(),
+        render_to_string(
+            'projects/email/project_quoted_user_message.txt',
+            email_context, request
+        ),
+        None, [project.user.email],
+    )
 
     return redirect('dashboard')
 
