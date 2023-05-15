@@ -81,6 +81,10 @@ img {
     object-fit: cover;
 }
 
+a.highlight {
+    color: var(--highlight-color);
+}
+
 /* endregion */
 
 /* region Section support */
