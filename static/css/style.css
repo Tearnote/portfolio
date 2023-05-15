@@ -220,8 +220,13 @@ footer > ul > li {
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
-    background: var(--background-color);
+    padding: 1.6rem 2.4rem 0.8rem;
+    background-image:
+        radial-gradient(#ede9f8 25%, transparent 25%),
+        radial-gradient(#eee9ff 25%, transparent 25%);
+    background-color: var(--background-color);
+    background-position: 0 0, 50px 50px;
+    background-size: 100px 100px;
     transform: rotate(-0.6deg);
     box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
 }
