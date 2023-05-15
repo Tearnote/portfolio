@@ -8,7 +8,7 @@ html {
     --highlight-color: #00c893;
     --dark-background-color: #686690;
 
-    scroll-padding-top: var(--header-height);
+    scroll-padding-top: calc(var(--header-height) - 2rem);
 }
 
 body {
