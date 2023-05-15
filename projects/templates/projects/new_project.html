@@ -9,6 +9,13 @@
         <h2>New project</h2>
     </div>
     <div class="content">
+        <p>
+            Here you can create a new project. You will be notified by email
+            once your project is reviewed and quoted, or if more information
+            is needed. If you want to ask additional questions or forward any
+            details, please use the <a href="{% url 'contact' %}">contact form</a>,
+            attaching the reference code from the created project.
+        </p>
         <form method="POST" action="{% url 'new_project' %}">
             {% csrf_token %}
             {{ form.as_div }}
