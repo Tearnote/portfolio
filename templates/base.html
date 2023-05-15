@@ -35,7 +35,9 @@
         <ul>
             {% if user.is_authenticated %}
                 <li>Signed in as {{ user }}</li>
-                <li><a class="highlight" href={% url 'profile' %}>User settings</a></li>
+                {% if not user.is_staff %}
+                    <li><a class="highlight" href={% url 'profile' %}>User settings</a></li>
+                {% endif %}
                 <li><a href="{% url 'account_logout' %}">Sign out</a></li>
             {% else %}
                 <li><a href="{% url 'account_login' %}">Sign in</a></li>
