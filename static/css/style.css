@@ -3,6 +3,7 @@
 html {
     --header-height: 4rem;
     --primary-color: #37375d;
+    --highlight-color: #00c893;
 
     scroll-padding-top: var(--header-height);
 }
@@ -189,11 +190,26 @@ footer > ul > li {
 /* region Eyecatch */
 
 #eyecatch {
+    position: relative;
     min-height: 75vh;
     display: flex;
     flex-flow: column;
     justify-content: center;
     align-items: center;
+}
+
+#eyecatch:after {
+    z-index: -10;
+    display: block;
+    content: "";
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    width: 110%;
+    height: 110%;
+    background-color: var(--highlight-color);
+    box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+    transform: rotate(4deg);
 }
 
 #eyecatch > h2 {
