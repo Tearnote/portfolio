@@ -10,6 +10,7 @@ html {
 body {
     min-height: 100vh;
     color: var(--primary-color);
+    font-family: 'Cabin', sans-serif;
 }
 
 body,
@@ -25,6 +26,15 @@ form {
  */
 main {
     flex: 1 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Expletus Sans', cursive;
 }
 
 button,
