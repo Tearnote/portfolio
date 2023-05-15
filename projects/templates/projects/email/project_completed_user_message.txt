@@ -1,0 +1,13 @@
+{% extends "account/email/base_message.txt" %}
+
+{% block content %}{% autoescape off %}
+Your project "{{ project.name }}" has just been completed!
+
+If you haven't already, you will shortly receive an email from the website
+owner with more details about the completed project, such as delivery method.
+Look forward to it!
+
+Project reference code:
+{{ project.uuid }}
+
+{% endautoescape %}{% endblock %}

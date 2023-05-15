@@ -183,6 +183,22 @@ def complete_project(request):
     project.status = models.Project.COMPLETED
     project.save()
 
+    # Send email notification to website owner
+    email_context = {
+        'project': project,
+    }
+    send_mail(
+        render_to_string(
+            'projects/email/project_completed_user_subject.txt',
+            email_context, request
+        ).strip(),
+        render_to_string(
+            'projects/email/project_completed_user_message.txt',
+            email_context, request
+        ),
+        None, [project.user.email],
+    )
+
     return redirect('dashboard')
 
 
