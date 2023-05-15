@@ -370,13 +370,47 @@ footer > ul > li {
 
 /* region Testimonials */
 
+#testimonials {
+    position: relative;
+}
+
+#testimonials:after {
+    z-index: -13;
+    display: block;
+    content: "";
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    width: 110%;
+    height: 105%;
+    background-color: var(--background-color);
+    box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+    transform: rotate(4deg);
+}
+
 #testimonials > .content {
-    max-width: 36rem;
+    display: flex;
+    flex-flow: column;
     text-align: center;
+    padding: 6rem 1rem 4rem;
+    margin: 0 auto;
+    max-width: 1000px;
 }
 
 #testimonials > .content > article {
-    padding: 1rem 0;
+    border: 1px solid #e6e6e6;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 25px 32px -12px;
+    max-width: 36rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem 1rem 0.5rem;
+}
+
+#testimonials > .content > article:nth-child(odd) {
+    align-self: flex-start;
+}
+
+#testimonials > .content > article:nth-child(even) {
+    align-self: flex-end;
 }
 
 #testimonials > .content > article > .body:before {
