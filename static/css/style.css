@@ -520,6 +520,14 @@ textarea:focus {
     padding: 1rem;
 }
 
+.project > h3 {
+    font-size: 1.25rem;
+    border-bottom: 2px solid var(--primary-color);
+    width: fit-content;
+    min-width: 40%;
+    padding-right: 1rem;
+}
+
 .project > p {
     margin: 0;
 }

@@ -1,13 +1,25 @@
 <div class="project">
-    <p>{{ project.name }}</p>
-    <p>Description: {{ project.description }}</p>
-    <p>Reference code: {{ project.uuid }}</p>
-    <p>
-        {# The if needs to be on the same line to avoid a space before the comma #}
-        Status: {{ project.get_status_display }}{% if project.status == project.PAYABLE %},
-            &euro;{{ project.quote_amount }}
-        {% endif %}
-    </p>
+    <h3>{{ project.name }}</h3>
+    <div class="field">
+        <p>Description:</p>
+        <p>{{ project.description }}</p>
+    </div>
+    <div class="field">
+        <p>Reference code:</p>
+        <p>{{ project.uuid }}</p>
+    </div>
+    <div class="field">
+        <p>
+            Status:
+            {# The if needs to be on the same line to avoid a space before the comma #}
+            <strong>
+                {{ project.get_status_display }}{% if project.status == project.PAYABLE %},
+                    &euro;{{ project.quote_amount }}
+                {% endif %}
+            </strong>
+        </p>
+    </div>
+
     {% if not noaction %}
         <div class="actions">
             {% if is_owner %}
