@@ -176,16 +176,17 @@ footer > ul > li {
     align-items: center;
 }
 
-#eyecatch > * {
-    margin-bottom: 2rem;
-}
-
 #eyecatch > h2 {
     font-size: 4rem;
 }
 
 #eyecatch > p {
     font-size: 1.5rem;
+}
+
+#eyecatch > .arrow {
+    margin: -1rem 0;
+    font-size: 3rem;
 }
 
 /* endregion */
