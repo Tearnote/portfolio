@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title_postfix %} - Portfolio{% endblock %}
 
@@ -22,7 +23,7 @@
     </div>
     <div class="content">
         <article>
-            <img src="#" alt="Screenshot of Minote rendering a test scene">
+            <img src="{% static 'images/minote.webp' %}" alt="Screenshot of Minote rendering a test scene">
             <div class="description">
                 <h3>Minote</h3>
                 <p>
@@ -48,7 +49,7 @@
             </div>
         </article>
         <article>
-            <img src="#" alt="Screenshot of the Gamecraft website">
+            <img src="{% static 'images/gamecraft.webp' %}" alt="Screenshot of the Gamecraft website">
             <div class="description">
                 <h3>Gamecraft</h3>
                 <p>
@@ -66,7 +67,7 @@
             </div>
         </article>
         <article>
-            <img src="#" alt="Screenshot of the browser game Village of Chaos">
+            <img src="{% static 'images/village-of-chaos.webp' %}" alt="Screenshot of the browser game Village of Chaos">
             <div class="description">
                 <h3>Village of Chaos</h3>
                 <p>

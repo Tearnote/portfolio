@@ -59,6 +59,10 @@ a[role="button"]:focus {
     outline: unset;
 }
 
+img {
+    object-fit: cover;
+}
+
 /* endregion */
 
 /* region Section support */
@@ -198,7 +202,6 @@ footer > ul > li {
     flex: 1 0 auto;
     width: 50%;
     height: 16rem;
-    object-fit: contain;
     overflow: hidden;
     background-color: lightgrey;
 }
