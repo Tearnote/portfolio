@@ -528,7 +528,11 @@ textarea:focus {
     padding-right: 1rem;
 }
 
-.project > p {
+.project > .field {
+    padding-bottom: 0.5rem;
+}
+
+.project > .field > p {
     margin: 0;
 }
 
