@@ -131,7 +131,7 @@ section:first-child {
     --content-width-factor: calc(1 - var(--header-width-factor));
     --content-width: calc(100% * var(--content-width-factor));
     width: var(--content-width);
-    padding: 2rem 1rem;
+    padding: 3rem 1rem;
 }
 
 /* endregion */
@@ -303,8 +303,18 @@ footer > ul > li {
 }
 
 #projects > .content > article > .description {
-    text-align: right;
+    display: flex;
+    flex-flow: column;
     padding: 1rem 1rem 0 0;
+}
+
+#projects > .content > article > .description > h3 {
+    align-self: flex-end;
+    border-bottom: 3px solid var(--primary-color);
+    width: fit-content;
+    min-width: 40%;
+    padding-left: 1.5rem;
+    text-align: right;
 }
 
 #projects > .content > article > .description > p {
