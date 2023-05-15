@@ -139,6 +139,7 @@ header {
     color: white;
     background-color: var(--primary-color);
     box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+    z-index: 100;
 }
 
 header a {
@@ -234,7 +235,7 @@ footer > ul > li {
 }
 
 #eyecatch > .content > .arrow {
-    margin: -1rem 0;
+    margin: -1rem 0 0;
     font-size: 3rem;
 }
 
