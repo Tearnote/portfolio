@@ -136,18 +136,18 @@ header {
     justify-content: center;
     width: 100%;
     height: var(--header-height);
-    color: white;
+    color: var(--background-color);
     background-color: var(--primary-color);
     box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
     z-index: 100;
 }
 
 header a {
-    color: white;
+    color: var(--background-color);
 }
 
 header a:hover {
-    color: #d0d0d0;
+    filter: brightness(80%);
 }
 
 header > nav {
