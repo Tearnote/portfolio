@@ -108,7 +108,7 @@ section:first-child {
     text-align: center;
     background-color: var(--dark-background-color);
     color: var(--background-color);
-    box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 25px 50px -12px;
 }
 
 .headered > .header > h2 {
@@ -147,7 +147,7 @@ header {
     height: var(--header-height);
     color: var(--background-color);
     background-color: var(--primary-color);
-    box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 25px 50px -12px;
     z-index: 100;
 }
 
@@ -227,7 +227,7 @@ footer > ul > li {
     width: 110%;
     height: 110%;
     background-color: var(--highlight-color);
-    box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 25px 50px -12px;
     transform: rotate(4deg);
 }
 
@@ -244,7 +244,7 @@ footer > ul > li {
     background-position: 0 0, 50px 50px;
     background-size: 100px 100px;
     transform: rotate(-0.6deg);
-    box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 25px 50px -12px;
 }
 
 #eyecatch > .content > h2 {
@@ -351,7 +351,7 @@ footer > ul > li {
     width: 110%;
     height: 110%;
     background-color: var(--primary-color);
-    box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 25px 50px -12px;
     transform: rotate(4deg);
 }
 
@@ -454,7 +454,7 @@ textarea:focus {
 
 .project {
     border: 1px solid #e6e6e6;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.03), 0 3px 6px rgba(0, 0, 0, 0.02);
+    box-shadow: rgba(0, 0, 0, 0.25) 0 25px 50px -12px;
     max-width: 36rem;
     margin-bottom: 1rem;
     padding: 1rem;
