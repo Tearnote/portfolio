@@ -2,12 +2,14 @@
 
 html {
     --header-height: 4rem;
+    --primary-color: #37375d;
+
     scroll-padding-top: var(--header-height);
 }
 
 body {
     min-height: 100vh;
-    color: #37375d;
+    color: var(--primary-color);
 }
 
 body,
@@ -124,6 +126,17 @@ header {
     justify-content: center;
     width: 100%;
     height: var(--header-height);
+    color: white;
+    background-color: var(--primary-color);
+    box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+}
+
+header a {
+    color: white;
+}
+
+header a:hover {
+    color: #d0d0d0;
 }
 
 header > nav {
