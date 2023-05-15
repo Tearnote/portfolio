@@ -130,7 +130,7 @@ section:first-child {
     --content-width-factor: calc(1 - var(--header-width-factor));
     --content-width: calc(100% * var(--content-width-factor));
     width: var(--content-width);
-    margin: 0 auto;
+    padding: 2rem 1rem;
 }
 
 /* endregion */
