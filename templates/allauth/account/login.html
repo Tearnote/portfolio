@@ -1,7 +1,5 @@
 {% extends 'base.html' %}
 
-{% load account %}
-
 {% block title_postfix %} - Sign in{% endblock %}
 
 {% block content %}
@@ -19,7 +17,7 @@
             If you have not created an account yet, then please
             <a href="{{ signup_url }}">sign up</a> first.
         </p>
-        <form class="login" method="POST" action="{% url 'account_login' %}">
+        <form method="POST" action="{% url 'account_login' %}">
             {% csrf_token %}
             {{ form.as_div }}
             {% if redirect_field_value %}
