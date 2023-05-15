@@ -572,7 +572,8 @@ textarea:focus {
     padding-bottom: 0.5rem;
 }
 
-.project > .field > p {
+.project > .field > p,
+.project > .field > pre {
     margin: 0;
 }
 
