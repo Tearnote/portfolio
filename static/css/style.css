@@ -480,6 +480,12 @@ footer > ul > li {
     max-width: 36rem;
     margin-bottom: 2rem;
     padding: 1.5rem 1rem 0.5rem;
+    background-color: white;
+    background-image:
+            radial-gradient(#f8f8f8 25%, transparent 25%),
+            radial-gradient(#fafafa 25%, transparent 25%);
+    background-position: 0 0, 50px 50px;
+    background-size: 100px 100px;
 }
 
 #testimonials > .content > figure:nth-child(odd) {
