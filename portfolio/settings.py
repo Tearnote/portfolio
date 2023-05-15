@@ -115,6 +115,12 @@ ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 3
 LOGIN_URL = '/user/login/'
 LOGIN_REDIRECT_URL = 'dashboard'
+ACCOUNT_ADAPTER = 'userprofile.adapters.ProfileAdapter'
+ACCOUNT_FORMS = {
+    'signup': 'userprofile.forms.ProfileSignupForm',
+}
+
+# Email
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
