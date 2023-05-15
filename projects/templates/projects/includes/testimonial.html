@@ -1,6 +1,10 @@
-<article>
-    <p class="body">{{ testimonial.body }}</p>
-    <p class="signoff">- <a href="{{ testimonial.project.user.profile.website }}">
-        {{ testimonial.project.user.profile.business_name }}
-    </a></p>
-</article>
+<figure>
+    <blockquote>
+        <p>{{ testimonial.body }}</p>
+    </blockquote>
+    <figcaption>
+        <cite>- <a href="{{ testimonial.project.user.profile.website }}">
+            {{ testimonial.project.user.profile.business_name }}
+        </a></cite>
+    </figcaption>
+</figure>
