@@ -46,7 +46,9 @@
 </header>
 
 <main>
+    {% block pre_content %}{% endblock %} {# For the purpose of allauth default templates #}
     {% block content %}{% endblock %}
+    {% block post_content %}{% endblock %} {# For the purpose of allauth default templates #}
 </main>
 
 <footer>
