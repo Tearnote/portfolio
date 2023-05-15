@@ -1,0 +1,14 @@
+{% extends "account/email/base_message.txt" %}
+
+{% block content %}{% autoescape off %}
+Your project "{{ project.name }}" has been rejected by the website owner.
+This might happen for many reasons, such as not enough detail provided to be
+able to give an accurate quote. You should have received another email from
+the website owner with the details. Once the issues are corrected, feel free to
+submit the project again from your dashboard:
+{{ request.scheme }}://{{ request.get_host }}{% url 'dashboard' %}
+
+Project reference code:
+{{ project.uuid }}
+
+{% endautoescape %}{% endblock %}

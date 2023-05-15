@@ -132,6 +132,22 @@ def reject_project(request):
     project.status = models.Project.REJECTED
     project.save()
 
+    # Send email notification to project owner
+    email_context = {
+        'project': project,
+    }
+    send_mail(
+        render_to_string(
+            'projects/email/project_rejected_user_subject.txt',
+            email_context, request
+        ).strip(),
+        render_to_string(
+            'projects/email/project_rejected_user_message.txt',
+            email_context, request
+        ),
+        None, [project.user.email],
+    )
+
     return redirect('dashboard')
 
 
