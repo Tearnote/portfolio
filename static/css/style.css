@@ -520,8 +520,8 @@ textarea:focus {
 
 .project {
     border: 1px solid #e6e6e6;
-    box-shadow: rgba(0, 0, 0, 0.25) 0 25px 50px -12px;
-    margin-bottom: 1rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0 13px 27px -5px, rgba(0, 0, 0, 0.3) 0 8px 16px -8px;
+    margin-bottom: 1.5rem;
     padding: 1rem;
 }
 
