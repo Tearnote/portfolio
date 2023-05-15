@@ -552,6 +552,12 @@ textarea:focus {
     box-shadow: rgba(50, 50, 93, 0.25) 0 13px 27px -5px, rgba(0, 0, 0, 0.3) 0 8px 16px -8px;
     margin-bottom: 1.5rem;
     padding: 1rem;
+    background-color: white;
+    background-image:
+            radial-gradient(#f8f8f8 25%, transparent 25%),
+            radial-gradient(#fafafa 25%, transparent 25%);
+    background-position: 0 0, 50px 50px;
+    background-size: 100px 100px;
 }
 
 .project > h3 {
