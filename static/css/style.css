@@ -13,6 +13,7 @@ html {
 
 body {
     min-height: 100vh;
+    background-color: var(--background-color);
     color: var(--primary-color);
     font-family: 'Cabin', sans-serif;
     overflow-x: hidden;
