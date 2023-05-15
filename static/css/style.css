@@ -282,6 +282,12 @@ footer > ul > li {
     transform: rotate(4deg);
 }
 
+#projects > .content {
+    padding-right: 0;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
 #projects > .content > article {
     display: flex;
     flex-flow: row-reverse;
