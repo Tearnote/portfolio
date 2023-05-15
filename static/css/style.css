@@ -185,7 +185,13 @@ footer {
     display: flex;
     flex-flow: row;
     justify-content: space-evenly;
-    padding: 2rem 0;
+    padding: 2rem 0 4rem;
+    color: var(--background-color);
+    background-color: var(--primary-color);
+}
+
+footer a {
+    color: var(--background-color);
 }
 
 footer > ul {
