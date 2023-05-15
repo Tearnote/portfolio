@@ -9,6 +9,9 @@
         <h2>Projects</h2>
     </div>
     <div class="content">
+        {% if not projects %}
+        <p>You have no projects. Click the button below to create one!</p>
+        {% endif %}
         {% for project in projects %}
             {% include 'projects/includes/project.html' with project=project %}
         {% endfor %}
