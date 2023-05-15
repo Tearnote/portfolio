@@ -356,11 +356,23 @@ footer > ul > li {
 }
 
 #testimonials > .content > article > .body:before {
-    content: "\"";
+    content: "“";
     display: inline-block;
     vertical-align: bottom;
     font-size: 2rem;
-    font-family: sans-serif;
+    line-height: 1.2rem;
+    margin-right: 0.2rem;
+    font-family: 'Times New Roman', serif;
+}
+
+#testimonials > .content > article > .body:after {
+    content: "”";
+    display: inline-block;
+    vertical-align: top;
+    font-size: 2rem;
+    line-height: 1.2rem;
+    margin-left: 0.2rem;
+    font-family: 'Times New Roman', serif;
 }
 
 #testimonials > .content > article > .signoff {
