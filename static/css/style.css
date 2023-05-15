@@ -140,6 +140,9 @@ section:last-of-type {
 .headered .content {
     --content-width-factor: calc(1 - var(--header-width-factor));
     --content-width: calc(100% * var(--content-width-factor));
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
     width: var(--content-width);
     padding: 2rem 1rem;
 }
