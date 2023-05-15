@@ -276,7 +276,7 @@ footer > ul > li {
     top: -5%;
     left: -5%;
     width: 110%;
-    height: 110%;
+    height: 105%;
     background-color: var(--background-color);
     box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
     transform: rotate(4deg);
@@ -336,10 +336,34 @@ footer > ul > li {
 
 /* region Contact */
 
+#contact {
+    position: relative;
+    color: var(--background-color);
+}
+
+#contact:after {
+    z-index: -12;
+    display: block;
+    content: "";
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    width: 110%;
+    height: 110%;
+    background-color: var(--primary-color);
+    box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+    transform: rotate(4deg);
+}
+
 #contact > .content {
     max-width: 36rem;
-    padding: 2rem 0;
+    padding: 8rem 0 4rem;
+    margin: 0 auto;
     text-align: center;
+}
+
+#contact a {
+    color: var(--highlight-color);
 }
 
 /* endregion */
