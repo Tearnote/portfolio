@@ -32,3 +32,9 @@ Validator: PEP8
 Input: All Python source files, scanned continuously by the IDE during development
 
 Outcome: No errors in the final version; they were resolved as they were encountered
+
+### Lighthouse
+
+Perfect score.
+
+![Lighthouse report showing 100 points in all categories](lighthouse.png)
