@@ -25,7 +25,9 @@
 
 <header>
     <nav>
-        <ul>
+        <input class="burger-toggle" type="checkbox" />
+        <div class="burger-icon"></div>
+        <ul class="anchors">
             <li><a href="{% url 'home' %}">Home</a></li>
             {% block header_anchors %}{% endblock %}
             {% if user.is_authenticated %}
@@ -34,7 +36,7 @@
         </ul>
         <ul>
             {% if user.is_authenticated %}
-                <li>Signed in as {{ user }}</li>
+                <li class="username">Signed in as {{ user }}</li>
                 {% if not user.is_staff %}
                     <li><a class="highlight" href={% url 'profile' %}>User settings</a></li>
                 {% endif %}
