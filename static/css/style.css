@@ -276,6 +276,8 @@ header > nav > ul > li {
 .messages > div {
     display: flex;
     flex-flow: column;
+    align-items: center;
+    position: relative;
     width: 20rem;
     max-width: 75vw;
     padding: 0.8rem;
@@ -301,6 +303,9 @@ header > nav > ul > li {
 }
 
 .messages > div > .cross {
+    position: relative;
+    top: -0.4rem;
+    right: -0.4rem;
     width: 2rem;
     height: 2rem;
     align-self: flex-end;
@@ -310,10 +315,10 @@ header > nav > ul > li {
     color: white;
     cursor: pointer;
     background-color: #37375d;
-    margin-bottom: 0.8rem;
 }
 
 .messages > div > p {
+    width: fit-content;
     margin: 0;
 }
 
