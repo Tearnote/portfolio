@@ -5,7 +5,7 @@
 
 {% block header_anchors %}
 <li><a href="#projects">Projects</a></li>
-<li><a href="#testimonials">Testimonials</a></li>
+{% if testimonials %}<li><a href="#testimonials">Testimonials</a></li>{% endif %}
 <li><a href="#contact">Contact</a></li>
 {% endblock %}
 
