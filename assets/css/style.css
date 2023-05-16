@@ -796,6 +796,16 @@ textarea:focus {
         0 1px 1px 0 rgba(0, 0, 0, 0.08);
 }
 
+.errorlist {
+    color: red;
+    margin: 0;
+    padding-left: 0.5rem;
+}
+
+.errorlist > li {
+    list-style: none;
+}
+
 /* endregion */
 
 /* region Projects */
