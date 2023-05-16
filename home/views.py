@@ -62,3 +62,11 @@ def contact(request):
         return submit_contact(request)
     else:
         return render_contact(request)
+
+
+@require_safe
+def privacy_policy(request):
+    """Render the privacy policy page
+    """
+
+    return render(request, 'home/privacy_policy.html')

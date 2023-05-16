@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title_postfix %} - Privacy policy{% endblock %}
+
+{% block content %}
+
+    <section class="small">
+        <div class="content">
+            <p>Last updated: May 16, 2023</p>
+            <h2>Overview</h2>
+            <p>
+                This privacy policy describes what kinds of information are
+                collected from you, and how we use your information.
+            </p>
+            <p>
+                This website does not collect personal details, or track you
+                with any technology. Some third parties used by the website
+                engage in tracking, and will be listed separately.
+            </p>
+            <h2>Personal information</h2>
+            <p>
+                No personal information is required to use the website, with or
+                without an account. Registration collects a valid email
+                address, country, website, and business name. These details
+                are only made public in the case that you choose to publish
+                a testimonial, which will be visible on the frontpage to any
+                other user.
+            </p>
+            <p>
+                The information collected is not never shared or sold to
+                anyone. It is only used for business communication and
+                voluntary testimonials.
+            </p>
+            <p>
+                If you wish to obtain a copy of all information we hold about
+                you, or delete your account to purge all of your information
+                from our servers, please send a message via the
+                <a href="{% url 'contact' %}">contact page</a>.
+            </p>
+            <h2>Tracking</h2>
+            <p>
+                This website does not engage in tracking. No statistics are
+                collected, in any form, including anonymized.
+            </p>
+            <h2>Third parties</h2>
+            <p>
+                This website makes use of
+                <a href="https://stripe.com/">Stripe</a>, a payment processor.
+                This involves collection of payment information from you, as
+                well as analytics which track you as you use the website for
+                the purposes of fraud prevention.
+            </p>
+            <p>
+                All payment information collected by Stripe is not made
+                available to this website, as part of Stripe's PCI compliance.
+                For full details, consult Stripe's privacy policy available
+                <a href="https://stripe.com/ie/privacy">here</a>.
+            </p>
+        </div>
+    </section>
+
+{% endblock %}
