@@ -70,3 +70,11 @@ def privacy_policy(request):
     """
 
     return render(request, 'home/privacy_policy.html')
+
+
+@require_safe
+def terms_of_service(request):
+    """Render the terms of service page
+    """
+
+    return render(request, 'home/terms_of_service.html')
