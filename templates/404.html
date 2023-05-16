@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title_postfix %} - Page not found!{% endblock %}
+
+{% block content %}
+
+<section class="small">
+    <div class="content">
+        <h2>404 - Page not found!</h2>
+        <p>
+            Whatever you were looking for doesn't exist. How did you even find
+            yourself here? I suppose that counts as some kind of achievement.
+            I know, let's give you a free link back to safety.
+        </p>
+        <p><a href="{% url 'home' %}">Click here to go back home.</a></p>
+    </div>
+</section>
+
+{% endblock %}
