@@ -104,7 +104,14 @@ Owner dashboard:
 ![Wireframe of the owner dashboard (desktop)](wireframes/d-owner-dashboard.png)
 ![Wireframe of the owner dashboard (mobile)](wireframes/m-owner-dashboard.png)
 
-The wireframe sources in [Balsamiq](https://balsamiq.com/wireframes/) format are available [here](wireframes/wireframes.bmpr).
+Promotional Facebook page:
+
+![Wireframe of a Facebook page](wireframes/facebook.png)
+
+The wireframe sources in [Balsamiq](https://balsamiq.com/wireframes/) format are available here:
+  
+-   [Website](wireframes/wireframes.bmpr),
+-   [Facebook](wireframes/facebook.bmpr).
 
 ## Database schema
 
