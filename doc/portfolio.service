@@ -6,7 +6,7 @@ After=network.target
 Type=simple
 User=web
 Group=web
-ExecStart=/srv/http/collec/venv/bin/gunicorn --chdir /srv/http/portfolio -c /srv/http/portfolio/gunicorn.conf.py portfolio.wsgi
+ExecStart=/srv/http/portfolio/venv/bin/gunicorn --chdir /srv/http/portfolio -c /srv/http/portfolio/gunicorn.conf.py portfolio.wsgi
 
 [Install]
 WantedBy=multi-user.target
