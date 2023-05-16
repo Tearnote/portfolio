@@ -736,10 +736,6 @@ footer > ul > li {
 
 /* region Forms */
 
-form {
-    min-width: 32rem;
-}
-
 form > div,
 form > input {
     display: flex;
