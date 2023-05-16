@@ -214,6 +214,34 @@ section:last-of-type > .content {
     margin: 0 auto;
 }
 
+@media (max-width: 700px) {
+    .headered,
+    .headered.reverse {
+        flex-flow: column;
+    }
+
+    .headered > .header {
+        width: unset;
+        height: 6rem;
+    }
+
+    .headered > .content {
+        width: unset;
+    }
+
+    .headered > .header > .fixed {
+        width: 100%;
+    }
+
+    .headered > .header > h2:before {
+        display: none;
+    }
+
+    .headered > .header > h2:after {
+        display: none;
+    }
+}
+
 /* endregion */
 
 /* region Header */
