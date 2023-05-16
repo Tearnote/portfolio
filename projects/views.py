@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -55,6 +56,9 @@ def create_new_project(request):
     project = form.save(commit=False)
     project.user = request.user
     project.save()
+    messages.info(request,
+                  f'Project "{project.name}" created. You will receive a'
+                  f' confirmation via email.')
 
     # Notify user and owners by email
     email_context = {
@@ -117,6 +121,7 @@ def cancel_project(request):
 
     project.status = models.Project.CANCELLED
     project.save()
+    messages.info(request, f'Project "{project.name}" has been cancelled.')
 
     # Send email notification to project owner / site owner
     email_context = {
@@ -152,6 +157,7 @@ def reject_project(request):
     project = get_object_or_404(models.Project, pk=request.POST['projectId'])
     project.status = models.Project.REJECTED
     project.save()
+    messages.info(request, f'Project "{project.name}" has been rejected.')
 
     # Send email notification to project owner
     email_context = {
@@ -181,6 +187,7 @@ def complete_project(request):
     project = get_object_or_404(models.Project, pk=request.POST['projectId'])
     project.status = models.Project.COMPLETED
     project.save()
+    messages.info(request, f'Project "{project.name}" has been completed.')
 
     # Send email notification to project owner
     email_context = {
@@ -211,6 +218,7 @@ def quote_project(request):
     project.quote_amount = int(request.POST['quoteAmount'])
     project.status = models.Project.PAYABLE
     project.save()
+    messages.info(request, f'Project "{project.name}" has been quoted.')
 
     # Send email notification to project owner
     email_context = {
@@ -245,6 +253,9 @@ def create_new_testimonial(request, project_id):
     testimonial = form.save(commit=False)
     testimonial.project = project
     testimonial.save()
+    messages.info(request,
+                  'Testimonial created. Thank you very much for your'
+                  ' support!')
 
     return redirect('dashboard')
 

@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_http_methods
 from django.shortcuts import render, redirect
@@ -13,6 +14,7 @@ def edit_profile(request):
     userprofile = request.user.profile
     form = forms.ProfileForm(request.POST, instance=userprofile)
     userprofile = form.save()
+    messages.info(request, 'Profile edited successfully!')
 
     return redirect('dashboard')
 
