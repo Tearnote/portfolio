@@ -58,6 +58,12 @@
             function messageClose(e) {
                 e.currentTarget.parentElement.remove();
             }
+            document.addEventListener("DOMContentLoaded", function() {
+                setTimeout(function() {
+                    let messages = document.getElementsByClassName("messages")[0];
+                    messages.remove();
+                }, 4000);
+            });
         </script>
     {% endif %}
 </header>
