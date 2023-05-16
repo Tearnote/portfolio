@@ -1,0 +1,10 @@
+{% extends "account/email/base_message.txt" %}
+
+{% block content %}{% autoescape off %}
+Contact form message received from {{ name }}.
+Sender email: {{ sender }}
+Project UUID: {% if project_uuid %}{{ project_uuid }}{% else %}Not provided{% endif %}
+Message:
+{{ message }}
+
+{% endautoescape %}{% endblock %}
