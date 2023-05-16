@@ -164,6 +164,8 @@ STATICFILES_DIRS = [
     BASE_DIR / 'vendor',
 ]
 
+STATIC_ROOT = BASE_DIR / 'nginx_static'
+
 INTERNAL_IPS = ['127.0.0.1', ]
 
 # Default primary key field type
