@@ -128,3 +128,15 @@ Prerequisites:
     python manage.py portfoliotstatic
     ```  
     This will copy all static files into the `static` folder in the project. The default Nginx configuration will serve these files directly.
+
+## Bugs
+
+None that were found remain in the submitted site.
+
+## Credits
+
+The `vendor` directory contains frontend code from other parties.
+
+`templates/allauth` contains majorly templates that were copied from the allauth library for customization.
+
+All other non-original code is attributed inline.
