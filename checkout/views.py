@@ -72,8 +72,8 @@ def checkout_complete(request):
     return render(request, 'checkout/complete.html', context)
 
 
-@csrf_exempt
 @require_POST
+@csrf_exempt
 def webhook(request):
     """Handle Stripe webhook
     """
