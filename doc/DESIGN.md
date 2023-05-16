@@ -139,3 +139,11 @@ A user-generated write-up of their experience with the website owner.
 -   User (foreign key)
 -   Project (foreign key)
 -   Body
+
+## Graphical design
+
+The purpose of the project is to showcase the content rather than impress with style, so the graphical design must muted and transparent. Simple color palette and little bells and whistles, with any effects aiming at optimal content discovery.
+
+The fonts selected are [Expletus Sans](https://fonts.google.com/specimen/Expletus+Sans) for headings and [Cabin](https://fonts.google.com/specimen/Cabin) for copy. The heading font has solid, professional shapes, but with unusual, attention-grabbing execution of corners. The copy test is similarly easy to follow, and matches its stroke width and cap height.
+
+The colors and other recurring quantities are saved as CSS variables for easy reuse and consistency.
