@@ -1,0 +1,7 @@
+https://portfolio.tear.moe/
+https://portfolio.tear.moe/contact/
+https://portfolio.tear.moe/privacy_policy/
+https://portfolio.tear.moe/terms_of_service/
+https://portfolio.tear.moe/user/login/
+https://portfolio.tear.moe/user/signup/
+https://portfolio.tear.moe/user/password/reset/
