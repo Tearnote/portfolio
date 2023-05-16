@@ -147,3 +147,7 @@ The purpose of the project is to showcase the content rather than impress with s
 The fonts selected are [Expletus Sans](https://fonts.google.com/specimen/Expletus+Sans) for headings and [Cabin](https://fonts.google.com/specimen/Cabin) for copy. The heading font has solid, professional shapes, but with unusual, attention-grabbing execution of corners. The copy test is similarly easy to follow, and matches its stroke width and cap height.
 
 The colors and other recurring quantities are saved as CSS variables for easy reuse and consistency.
+
+## Business strategy
+
+As the idea behind the website is to provide a paid service, it would be prudent to ensure the business model is appropriate. The website aims to replicate the traditional contract work method, in which the service provider is paid in advance for the work, while being legally bound by a contract to provide it. For that purpose, the website tracks the entire lifecycle of a request. All phases such as providing a quote, paying in advance, and waiting for the project to be completed are recreated. This should provide a familiar, comfortable experience to users who mostly likely already worked with contractors before.
