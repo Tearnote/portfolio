@@ -473,6 +473,42 @@ footer > ul > li {
     font-size: 3rem;
 }
 
+@media (max-width: 640px) {
+    #eyecatch > .content {
+        padding: 1.2rem 1.8rem 0.6rem;
+    }
+
+    #eyecatch > .content > h2 {
+        font-size: 3rem;
+    }
+
+    #eyecatch > .content > p {
+        font-size: 1.35rem;
+    }
+
+    #eyecatch > .content > .arrow {
+        font-size: 2.25rem;
+    }
+}
+
+@media (max-width: 500px) {
+    #eyecatch > .content {
+        padding: 0.8rem 1.2rem 0.4rem;
+    }
+
+    #eyecatch > .content > h2 {
+        font-size: 2rem;
+    }
+
+    #eyecatch > .content > p {
+        font-size: 1.2rem;
+    }
+
+    #eyecatch > .content > .arrow {
+        font-size: 1.5rem;
+    }
+}
+
 /* endregion */
 
 /* region Showcase */
@@ -543,6 +579,33 @@ footer > ul > li {
 
 #projects > .content > article > .description > .links {
     text-align: center;
+}
+
+@media (max-width: 1000px) {
+    #projects:after {
+        width: 120%;
+    }
+
+    #projects > .content > article {
+        flex-flow: column;
+    }
+
+    #projects > .content > article:first-child {
+        padding-top: 0;
+    }
+
+    #projects > .content > article > img {
+        width: 100%;
+        max-width: unset;
+    }
+
+    #projects > .content > article > .description {
+        margin: 0 auto;
+    }
+
+    #projects > .content > article > .description > h3 {
+        padding-right: 1rem;
+    }
 }
 
 /* endregion */
