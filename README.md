@@ -40,6 +40,27 @@ Commissions can be paid for using an online gateway.
 
 Email notifications are sent to the website owner and/or project owner when relevant.
 
+## Technologies used
+
+-   Python 3: Used for the backend portion of the app,
+-   HTML5+CSS3: Design of the frontend,
+-   Javascript (ES6): Interactive functionality, payment gateway, advanced page layout,
+-   Stripe API: card payment functionality,
+-   SMTP: Sending emails from the app.
+
+## Dependencies
+
+All dependencies are included, or installed via requirements.txt.
+
+-   Django 4.1: Backend framework used to serve the app to the browser and as a RESTful interface to manipulate the models,
+-   Bootstrap Reboot: A CSS reset with sane basic styles,
+-   django-allauth: Django library that expands on the built-in user authentication,
+-   django-countries: Django library that adds a country model field and form widget,
+-   gunicorn: A production-ready application server,
+-   psycopg2: The most popular Postgres driver for Python,
+-   python-dotenv: Used to handle environment variables more easily,
+-   stripe: Library for interacting with the public Stripe API.
+
 ## Deployment
 
 *Portfolio* is a Django web-app, and is deployed via the standard Django procedures. A number of settings is exposed via environment variables, some of which must be set for the app to load:
