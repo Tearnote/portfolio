@@ -160,11 +160,11 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',
+    BASE_DIR / 'assets',
     BASE_DIR / 'vendor',
 ]
 
-STATIC_ROOT = BASE_DIR / 'nginx_static'
+STATIC_ROOT = BASE_DIR / 'static'
 
 INTERNAL_IPS = ['127.0.0.1', ]
 
