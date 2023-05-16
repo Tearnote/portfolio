@@ -2,6 +2,8 @@
 
 *Portfolio* is a dynamic website showcasing my projects, with commissioning functionality, made for [Code Institute](https://codeinstitute.net/)'s 5th submission project.
 
+A live version is deployed and available [here](https://portfolio.tear.moe).
+
 ## Important notes
 
 The documentation is split across three files:
