@@ -423,7 +423,8 @@ footer > ul > li {
 #eyecatch {
     z-index: 10;
     position: relative;
-    min-height: 75vh;
+    height: 75vh;
+    min-height: 36rem;
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -584,6 +585,10 @@ footer > ul > li {
 @media (max-width: 1000px) {
     #projects:after {
         width: 120%;
+    }
+
+    #projects > .content {
+        padding-top: 0;
     }
 
     #projects > .content > article {
