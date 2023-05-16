@@ -44,3 +44,5 @@ class ContactForm(forms.Form):
             ),
             None, [owner.email for owner in User.objects.filter(is_staff=True)]
         )
+
+        return True
