@@ -12,6 +12,34 @@ The documentation is split across three files:
 -   [DESIGN.md](doc/DESIGN.md): UX design notes crafted during early stages of development. The design process is described entirely, from the concept and market research, through information structuring to visual design principles and color palettes.
 -   [TESTING.md](doc/TESTING.md): Automated and manual testing procedures are described in detail, as well as their outcomes.
 
+The project is managed via a [GitHub project](https://github.com/users/Tearnote/projects/3/). Issues are created in a "User story" format, and assigned size/complexity and importance. Each issue contains a title, user story sentence, and a list of technical expectations.
+
+## Highlights
+
+![Screenshot of the homepage](doc/highlights/home.png)
+
+The homepage features an attractive eye-catch figure.
+
+![Screenshot of the showcase section](doc/highlights/showcase.png)
+
+Further down, the page showcases past projects, serving as a portfolio.
+
+![Screenshot of the testimonails section](doc/highlights/testimonials.png)
+
+Further still, testimonials of real existing users are shown (if existing.)
+
+![Screenshot of the dashboard](doc/highlights/dashboard.png)
+
+After signing in, users can access their dashboard with all commissions so far.
+
+![Screenshot of the payment page](doc/highlights/payment.png)
+
+Commissions can be paid for using an online gateway.
+
+![Screenshot of an email sent by the site](doc/highlights/email.png)
+
+Email notifications are sent to the website owner and/or project owner when relevant.
+
 ## Deployment
 
 *Portfolio* is a Django web-app, and is deployed via the standard Django procedures. A number of settings is exposed via environment variables, some of which must be set for the app to load:
