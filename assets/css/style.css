@@ -883,6 +883,7 @@ textarea:focus {
     color: var(--background-color);
     margin-top: -2rem;
     padding: 4rem 0 6rem;
+    z-index: 2;
 }
 
 #newsletter > p {
