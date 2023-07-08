@@ -806,21 +806,6 @@ textarea:focus {
     list-style: none;
 }
 
-#newsletter-form {
-    display: flex;
-    flex-flow: column;
-    max-width: 36rem;
-    padding: 0.5rem 1rem 0.5rem;
-    border: 1px solid #e6e6e6;
-    box-shadow: rgba(0, 0, 0, 0.25) 0 25px 32px -12px;
-    background-color: white;
-    background-image:
-        radial-gradient(#f8f8f8 25%, transparent 25%),
-        radial-gradient(#fafafa 25%, transparent 25%);
-    background-position: 0 0, 50px 50px;
-    background-size: 100px 100px;
-}
-
 /* endregion */
 
 /* region Projects */
@@ -884,6 +869,44 @@ textarea:focus {
 .project > .actions > a[role="button"],
 .project > .actions > button {
     margin: 0.5rem 0 0 0.5rem;
+}
+
+/* endregion */
+
+/* region Newsletter */
+
+#newsletter {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    background-color: var(--dark-background-color);
+    color: var(--background-color);
+    margin-top: -2rem;
+    padding: 4rem 0 6rem;
+}
+
+#newsletter > p {
+    width: 100%;
+    max-width: 36rem;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+#newsletter-form {
+    color: var(--primary-color);
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    max-width: 36rem;
+    padding: 0.5rem 1rem 1.5rem;
+    border: 1px solid #e6e6e6;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 25px 32px -12px;
+    background-color: white;
+    background-image:
+            radial-gradient(#f8f8f8 25%, transparent 25%),
+            radial-gradient(#fafafa 25%, transparent 25%);
+    background-position: 0 0, 50px 50px;
+    background-size: 100px 100px;
 }
 
 /* endregion */
