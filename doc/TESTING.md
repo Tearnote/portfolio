@@ -252,7 +252,8 @@ Process:
 
 1. As user, open the dashboard, find a project in payable state, and push the "Pay now" button.
 2. Put test card details (4242 4242 4242 4242, any expiry date in the future, any CVC) and submit the payment,
-3. Confirm that the project changed state to "In progress".
+3. Confirm that the project changed state to "In progress",
+4. Confirm that both the user and the admin received confirmation emails.
 
 Expected:
 
@@ -262,3 +263,25 @@ Outcome: As expected.
 
 ![Screenshot of the payment page](testing/11-1.png)
 ![Screenshot of a successful payment](testing/11-2.png)
+![Screenshot of a payment confirmation email (user)](testing/11-3.png)
+![Screenshot of a payment confirmation email (admin)](testing/11-4.png)
+
+### 12. Completing a project
+
+Process:
+
+1. As admin, open the dashboard and find a project in progress,
+2. Press the "Mark completed" button,
+3. Confirm that project state changed to completed,
+4. Confirm that the user received a confirmation email.
+
+Expected:
+
+Admin is able to mark a project as completed, and the owner of it is notified by email.
+
+Outcome: As expected.
+
+![Screenshot of the project in progress](testing/12-1.png)
+![Screenshot of a projection completion confirmation popup](testing/12-2.png)
+![Screenshot of the project marked as completed](testing/12-3.png)
+![Screenshot of a completion confirmation email](testing/12-4.png)
