@@ -285,3 +285,20 @@ Outcome: As expected.
 ![Screenshot of a projection completion confirmation popup](testing/12-2.png)
 ![Screenshot of the project marked as completed](testing/12-3.png)
 ![Screenshot of a completion confirmation email](testing/12-4.png)
+
+### 13. Newsletter signup
+
+Process:
+
+1. As any user, open the frontpage and locate the newsletter section,
+2. Input an email address into the field,
+3. Press the "Subscribe" button and confirm that the Mailchimp page received the correct address.
+
+Expected:
+
+The inputted email address is passed over to Mailchimp for further newsletter management. Any further newsletter features, like sending emails, are done entirely on Mailchimp's side and therefore are outside of the scope of testing the Portfolio website.
+
+Outcome: As expected. Mailchimp did not accept the fake address, but it was passed over successfully. A valid address would be added to the newsletter.
+
+![Screenshot of the newsletter section](testing/13-1.png)
+![Screenshot of the Mailchimp landing page](testing/13-2.png)
