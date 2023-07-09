@@ -128,6 +128,7 @@ Prerequisites:
     python manage.py portfoliotstatic
     ```  
     This will copy all static files into the `static` folder in the project. The default Nginx configuration will serve these files directly.
+14. For mailing list functionality, customize the hardcoded Mailchimp widget in [`home/templates/home/index.html`](home/templates/home/index.html) with code generated from the Mailchimp control panel.
 
 ## Bugs
 
